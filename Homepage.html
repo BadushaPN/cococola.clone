@@ -1,0 +1,2614 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)https://www.coca-colaindia.com/homepage -->
+<html lang="en-IN" class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths desktopNavMode xl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+
+    
+    
+    
+    
+    
+    
+    <link rel="canonical" href="https://www.coca-colaindia.com/homepage">
+    
+    
+    
+    
+    
+    
+    
+    
+    <meta property="og:url" content="https://www.coca-colaindia.com/homepage">
+    <meta property="content-path" content="/content/journey/in/en/homepage">
+	
+    
+    <meta name="template" content="journey-baseline-homepage-template">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    
+        
+        <link rel="preconnect" href="https://shared.coke.com/">
+        <link rel="preconnect" href="https://static.coke.com/">
+        <link rel="preconnect" href="https://use.typekit.net/">
+    
+    
+        <script>(function () {
+	const guid = 'b3898b0f-5d8b-7458-37e5-9bc8f19c12b3';
+	const query = '[data-instance-id="' + guid + '"] .footer-link';
+
+	function eraseLastSeparatorLine() {
+		const items = document.querySelectorAll(query);
+		for (let i = 0; i < items.length - 1; i++) {
+			const item = items[i];
+
+			if (item.offsetTop !== items[i + 1].offsetTop) {
+				item.classList.add('no-border');
+			} else {
+				item.classList.remove('no-border');
+			}
+		}
+	}
+
+	const interval = setInterval(function () {
+		const items = document.querySelectorAll(query);
+		if (items.length > 0) {
+			clearInterval(interval);
+			eraseLastSeparatorLine();
+			window.addEventListener('resize', eraseLastSeparatorLine);
+		}
+	}, 300);
+
+	function addNewTabMessage(link) {
+		if (!link.querySelector('.screen-reader-only')) {
+			link.insertAdjacentHTML(
+				'beforeend',
+				'<span class="screen-reader-only">(opens in a new tab)</span>'
+			);
+		}
+	}
+
+	document
+		.querySelectorAll(
+			'.tccc-cmp-footer[data-design-package="links_before_header"] a[target="_blank"]'
+		)
+		.forEach(link => {
+			addNewTabMessage(link);
+		});
+})();
+
+//# sourceURL=prototype/app/components/footer/js/links_before_header-footer.js</script><script>(function () {
+	define('bleedCard', function () {
+		function Card(guid) {
+			this.card = $('[data-instance-id="' + guid + '"]');
+
+			//DOM Manipulation to position at the bottom of the card scroll
+			let hasPositionPB = false;
+			if(this.card.parent().hasClass('topLeft') || this.card.parent().hasClass('middleLeft') || this.card.parent().hasClass('bottomLeft') || this.card.parent().hasClass('topCenter') || this.card.parent().hasClass('middleCenter') || this.card.parent().hasClass('bottomCenter') || this.card.parent().hasClass('topRight') || this.card.parent().hasClass('middleRight') || this.card.parent().hasClass('bottomRight')){
+				hasPositionPB = true;
+			}
+			if(hasPositionPB) {
+				this.card.each(function(){ 
+					let $scrollElement = $(this).find('.card-addText');
+					$scrollElement.closest('.card__div--overlay').append($scrollElement);
+				});
+			}
+
+			let getVideoId = (url) => {
+				let regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+				let match = url.match(regExp);
+
+				if (match && match[2].length === 11) {
+					return match[2];
+				} else {
+					return 'error';
+				}
+			};
+
+			this.init = () => {
+				if (this.card.length) {
+					$(this.card).find('iframe').attr('src', function (i, src){
+						src = '//www.youtube.com/embed/' + getVideoId(src);
+						return src;
+					});
+				}
+			};
+		}
+
+		return Card;
+	});
+
+	requirejs(['require', 'jqueryNoConflict', 'bleedCard'], function (require, $, card) {
+		$(document).ready(function () {
+			let bleedCard = new card('e84ebc77-910e-c61a-3cee-a52132181d95');
+			bleedCard.init();
+		});
+	});
+})();</script><script>(function () {
+	define('bleedCard', function () {
+		function Card(guid) {
+			this.card = $('[data-instance-id="' + guid + '"]');
+
+			//DOM Manipulation to position at the bottom of the card scroll
+			let hasPositionPB = false;
+			if(this.card.parent().hasClass('topLeft') || this.card.parent().hasClass('middleLeft') || this.card.parent().hasClass('bottomLeft') || this.card.parent().hasClass('topCenter') || this.card.parent().hasClass('middleCenter') || this.card.parent().hasClass('bottomCenter') || this.card.parent().hasClass('topRight') || this.card.parent().hasClass('middleRight') || this.card.parent().hasClass('bottomRight')){
+				hasPositionPB = true;
+			}
+			if(hasPositionPB) {
+				this.card.each(function(){ 
+					let $scrollElement = $(this).find('.card-addText');
+					$scrollElement.closest('.card__div--overlay').append($scrollElement);
+				});
+			}
+
+			let getVideoId = (url) => {
+				let regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+				let match = url.match(regExp);
+
+				if (match && match[2].length === 11) {
+					return match[2];
+				} else {
+					return 'error';
+				}
+			};
+
+			this.init = () => {
+				if (this.card.length) {
+					$(this.card).find('iframe').attr('src', function (i, src){
+						src = '//www.youtube.com/embed/' + getVideoId(src);
+						return src;
+					});
+				}
+			};
+		}
+
+		return Card;
+	});
+
+	requirejs(['require', 'jqueryNoConflict', 'bleedCard'], function (require, $, card) {
+		$(document).ready(function () {
+			let bleedCard = new card('1dcaf30d-57fc-ae67-6c01-f7f2fc39e616');
+			bleedCard.init();
+		});
+	});
+})();</script><script>(function () {
+	define('bleedCard', function () {
+		function Card(guid) {
+			this.card = $('[data-instance-id="' + guid + '"]');
+
+			//DOM Manipulation to position at the bottom of the card scroll
+			let hasPositionPB = false;
+			if(this.card.parent().hasClass('topLeft') || this.card.parent().hasClass('middleLeft') || this.card.parent().hasClass('bottomLeft') || this.card.parent().hasClass('topCenter') || this.card.parent().hasClass('middleCenter') || this.card.parent().hasClass('bottomCenter') || this.card.parent().hasClass('topRight') || this.card.parent().hasClass('middleRight') || this.card.parent().hasClass('bottomRight')){
+				hasPositionPB = true;
+			}
+			if(hasPositionPB) {
+				this.card.each(function(){ 
+					let $scrollElement = $(this).find('.card-addText');
+					$scrollElement.closest('.card__div--overlay').append($scrollElement);
+				});
+			}
+
+			let getVideoId = (url) => {
+				let regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+				let match = url.match(regExp);
+
+				if (match && match[2].length === 11) {
+					return match[2];
+				} else {
+					return 'error';
+				}
+			};
+
+			this.init = () => {
+				if (this.card.length) {
+					$(this.card).find('iframe').attr('src', function (i, src){
+						src = '//www.youtube.com/embed/' + getVideoId(src);
+						return src;
+					});
+				}
+			};
+		}
+
+		return Card;
+	});
+
+	requirejs(['require', 'jqueryNoConflict', 'bleedCard'], function (require, $, card) {
+		$(document).ready(function () {
+			let bleedCard = new card('76135a80-68a8-16c3-f228-ec4bc6c73934');
+			bleedCard.init();
+		});
+	});
+})();</script><script>(function () {
+	define('bleedCard', function () {
+		function Card(guid) {
+			this.card = $('[data-instance-id="' + guid + '"]');
+
+			//DOM Manipulation to position at the bottom of the card scroll
+			let hasPositionPB = false;
+			if(this.card.parent().hasClass('topLeft') || this.card.parent().hasClass('middleLeft') || this.card.parent().hasClass('bottomLeft') || this.card.parent().hasClass('topCenter') || this.card.parent().hasClass('middleCenter') || this.card.parent().hasClass('bottomCenter') || this.card.parent().hasClass('topRight') || this.card.parent().hasClass('middleRight') || this.card.parent().hasClass('bottomRight')){
+				hasPositionPB = true;
+			}
+			if(hasPositionPB) {
+				this.card.each(function(){ 
+					let $scrollElement = $(this).find('.card-addText');
+					$scrollElement.closest('.card__div--overlay').append($scrollElement);
+				});
+			}
+
+			let getVideoId = (url) => {
+				let regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+				let match = url.match(regExp);
+
+				if (match && match[2].length === 11) {
+					return match[2];
+				} else {
+					return 'error';
+				}
+			};
+
+			this.init = () => {
+				if (this.card.length) {
+					$(this.card).find('iframe').attr('src', function (i, src){
+						src = '//www.youtube.com/embed/' + getVideoId(src);
+						return src;
+					});
+				}
+			};
+		}
+
+		return Card;
+	});
+
+	requirejs(['require', 'jqueryNoConflict', 'bleedCard'], function (require, $, card) {
+		$(document).ready(function () {
+			let bleedCard = new card('c5a958cb-c48f-6b71-4974-785599330cb3');
+			bleedCard.init();
+		});
+	});
+})();</script><script>(function () {
+	define('bleedCard', function () {
+		function Card(guid) {
+			this.card = $('[data-instance-id="' + guid + '"]');
+
+			//DOM Manipulation to position at the bottom of the card scroll
+			let hasPositionPB = false;
+			if(this.card.parent().hasClass('topLeft') || this.card.parent().hasClass('middleLeft') || this.card.parent().hasClass('bottomLeft') || this.card.parent().hasClass('topCenter') || this.card.parent().hasClass('middleCenter') || this.card.parent().hasClass('bottomCenter') || this.card.parent().hasClass('topRight') || this.card.parent().hasClass('middleRight') || this.card.parent().hasClass('bottomRight')){
+				hasPositionPB = true;
+			}
+			if(hasPositionPB) {
+				this.card.each(function(){ 
+					let $scrollElement = $(this).find('.card-addText');
+					$scrollElement.closest('.card__div--overlay').append($scrollElement);
+				});
+			}
+
+			let getVideoId = (url) => {
+				let regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+				let match = url.match(regExp);
+
+				if (match && match[2].length === 11) {
+					return match[2];
+				} else {
+					return 'error';
+				}
+			};
+
+			this.init = () => {
+				if (this.card.length) {
+					$(this.card).find('iframe').attr('src', function (i, src){
+						src = '//www.youtube.com/embed/' + getVideoId(src);
+						return src;
+					});
+				}
+			};
+		}
+
+		return Card;
+	});
+
+	requirejs(['require', 'jqueryNoConflict', 'bleedCard'], function (require, $, card) {
+		$(document).ready(function () {
+			let bleedCard = new card('94829918-0149-52d6-f099-a75be94fa4b6');
+			bleedCard.init();
+		});
+	});
+})();</script><script>(function () {
+	define('bleedCard', function () {
+		function Card(guid) {
+			this.card = $('[data-instance-id="' + guid + '"]');
+
+			//DOM Manipulation to position at the bottom of the card scroll
+			let hasPositionPB = false;
+			if(this.card.parent().hasClass('topLeft') || this.card.parent().hasClass('middleLeft') || this.card.parent().hasClass('bottomLeft') || this.card.parent().hasClass('topCenter') || this.card.parent().hasClass('middleCenter') || this.card.parent().hasClass('bottomCenter') || this.card.parent().hasClass('topRight') || this.card.parent().hasClass('middleRight') || this.card.parent().hasClass('bottomRight')){
+				hasPositionPB = true;
+			}
+			if(hasPositionPB) {
+				this.card.each(function(){ 
+					let $scrollElement = $(this).find('.card-addText');
+					$scrollElement.closest('.card__div--overlay').append($scrollElement);
+				});
+			}
+
+			let getVideoId = (url) => {
+				let regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+				let match = url.match(regExp);
+
+				if (match && match[2].length === 11) {
+					return match[2];
+				} else {
+					return 'error';
+				}
+			};
+
+			this.init = () => {
+				if (this.card.length) {
+					$(this.card).find('iframe').attr('src', function (i, src){
+						src = '//www.youtube.com/embed/' + getVideoId(src);
+						return src;
+					});
+				}
+			};
+		}
+
+		return Card;
+	});
+
+	requirejs(['require', 'jqueryNoConflict', 'bleedCard'], function (require, $, card) {
+		$(document).ready(function () {
+			let bleedCard = new card('d5af1f04-ee6b-0ffb-10b6-73142d059b0f');
+			bleedCard.init();
+		});
+	});
+})();</script><script>(function () {
+	// get specific component instance
+	const STATIC_ROOT = 'https://static.coke.com'; // will be set with main.js
+
+	// variables
+	var guid = 'c2fe5229-eb53-7279-16e6-ad475f35cf0c',
+		$html = $('html'),
+		$container = $('[data-instance-id="' + guid + '"]'),
+		$navContainer = $container.find('.nav_container'),
+		$skipToContent = $container.find('.skip-to-content'),
+		$desktopNav = $container.find('.desktopNav'),
+		$mobileNavOverlay = $container.find('.mobile-navigation-overlay'),
+		$mobileNavtoggleIcon = $container.find('.mobileNavBar .navbar-toggler'),
+		$mobileNavMainPage = $container.find('.navLevel1'),
+		$secondaryNav = $container.find('.navLevel2'),
+		curMode = 'mobile',
+		model = $container.data('model'),
+		scrollTop = 0,
+		scrollPrev = 0,
+		desktopModeLoaded = false,
+		desktopBuffer = 20,
+		$secondaryDesktopNav,
+		$secondaryDesktopNavContainer,
+		originalSecondaryDesktopNavTop = -1,
+		navHeight = $desktopNav.outerHeight(),
+		desktopNavWidthRendered = Math.round(
+			$('.nav_container .desktopNav .navbar-nav').outerWidth(true)
+		),
+		navitemwidths = 0,
+		shortHeight = -1,
+		currentlyRefreshing = false,
+		// append .html to links when in author mode or extensions are enabled
+		htmlExtension = tccc.extensions || tccc.isAuthorMode ? '.html' : '',
+		secondaryNavSlickCfg = {
+			autoplay: false,
+			infinite: false,
+			slidesToScroll: 1,
+			slidesToShow: 4,
+			variableWidth: false,
+			rtl: $('html[dir="rtl"]').length ? true : false,
+		},
+		newsPage = $('body').data('companyconfig-newspagepath'),
+		backHistory = [], // array of links tracking how Back arrows should function
+		locale = tccc.global.getLocale(),
+		browserURL = window.location.href;
+
+	//adjusting the newsPage for shortened path
+	//For shortened paths shotorten the authored URL or newsPage
+
+	if (newsPage === 'undefined' || typeof newsPage === 'undefined') {
+		newsPage = '';
+	}
+
+	if (!browserURL.includes('content')) {
+		newsPage = newsPage.substring(newsPage.lastIndexOf('/'));
+	}
+
+	//Show Skip to Content button(on tab) if in Canadian En and Fr pages
+
+	if (
+		tccc.global.getLocale() === 'en-ca' ||
+		tccc.global.getLocale() === 'fr-ca'
+	) {
+		$skipToContent.addClass('goToContent');
+	}
+
+	// function getWidth() {
+	// 	return Math.max(
+	// 		document.body.scrollWidth,
+	// 		document.documentElement.scrollWidth,
+	// 		document.body.offsetWidth,
+	// 		document.documentElement.offsetWidth,
+	// 		document.documentElement.clientWidth
+	// 	);
+	// }
+
+	// var SAFEZONE = getWidth();
+
+	var Navigation = {
+		init: function () {
+			var self = this;
+
+			self.getRecentArticles();
+			self.highlightCurrentLink($container);
+			self.addEventHandlers();
+
+			// setup checks for mobile vs. desktop layouts
+			var debounce = tccc.util.debounceMethod(checkMode, 300, false);
+			$(window)
+				.on('resize', function () {
+					debounce();
+				})
+				.resize();
+			setTimeout(function () {
+				// SAFEZONE = getWidth();
+				checkMode();
+			}, 200); // make sure html.sm type breakpoint classes have been added
+
+			// function needs to be here for debounce to work
+			function checkMode() {
+				$(window).trigger('scroll');
+				self.setupMode();
+			}
+		},
+		getRecentArticles: function () {
+			var guid = 'c2fe5229-eb53-7279-16e6-ad475f35cf0c',
+				content_type = 'article',
+				site = tccc.global.getSite(),
+				tccc_component = tccc.util.getComponent(
+					tccc.components,
+					guid,
+					'navigation'
+				);
+
+			var searchId = 'navigation'; // default to global site search if not defined
+
+			tccc.search.requireModule(function () {
+				if (!tccc.search.instances[searchId]) {
+					// searchId doesn't yet exist - add to instances
+					var cfg = tccc.search.defaultConfig();
+					cfg.searchId = 'navigation';
+					tccc.search.instances[searchId] = cfg;
+				}
+				if (locale) {
+					tccc.search.addQueryPhrase(
+						tccc.search.instances[searchId],
+						'locale',
+						locale
+					);
+				}
+				if (site) {
+					tccc.search.addQueryPhrase(
+						tccc.search.instances[searchId],
+						'site',
+						site
+					);
+				}
+				tccc.search.addQueryPhrase(
+					tccc.search.instances[searchId],
+					'content_type',
+					content_type
+				);
+
+				// execute on load
+				tccc.search.execSearch(tccc.search.instances[searchId]);
+
+				$(window).on('SEARCH_QUERY_COMPLETE', function (event, eventSearchId) {
+					// check if the search query that completed relates to this component
+					if (searchId === eventSearchId) {
+						tccc_component.searchResponse =
+							tccc.search.instances[searchId].response;
+						tccc_component.searchResponseMapped =
+							tccc.search.instances[searchId].responseMapped;
+
+						// temp fix - remove /content/journey/au/en from paths
+						setTimeout(function () {
+							var contentPath = '/content/journey/au/en';
+							$container
+								.find(
+									'.searchResult__title-anchor, .searchResult__title-anchor'
+								)
+								.each(function () {
+									var url = this['href'];
+									if (url.search(contentPath) != -1) {
+										var shortendUrl = url.replace(contentPath, '');
+										this['href'] = shortendUrl;
+									}
+								});
+						}, 300);
+					}
+				});
+			});
+		},
+
+		highlightCurrentLinkInSubnav: function () {
+			var self = this;
+			// VanityPath Fix :Get current page URL from content-path
+			var url = document.querySelector('meta[property="content-path"]').content;
+			url = self.formatUrl(url);
+			var found = false;
+
+			$secondaryDesktopNav = $(
+				'.tccc-cmp-navigation[data-design-package="/content/dam/journey/components/content/navigation/horizontal_scrolling"]'
+			);
+			$secondaryDesktopNav.find('a').each(function (k, v) {
+				var $this = $(v);
+				if (url === self.formatUrl($this.attr('href'))) {
+					found = true;
+					$this.parent().parent().addClass('current');
+				}
+			});
+			$secondaryDesktopNav.find('.nav_container').removeClass('d-none hidden');
+
+			if (!found) {
+				//Identify if its on 3rd or more menu level nav
+				var url2 = document.querySelector('meta[property="content-path"]').content;
+				var urlArray = url2.split('/');
+				var filteredUrlArray = urlArray[urlArray.length-2];
+				var $currentFilteredUrl = $secondaryDesktopNav.find('.slick-slide a[href*="'+filteredUrlArray+'"]');
+				
+				if( $currentFilteredUrl.length > 0 ){ 
+					$currentFilteredUrl.closest('.slick-slide').addClass("current");
+				}else {
+				// current page is not in subnav - highlight the section header instead
+				$secondaryDesktopNav.find('.slick-slide').first().addClass('current');
+				}
+			}
+		},
+
+		setupMode: function () {
+			var self = this;
+
+			if (self.isDesktopMode()) {
+				curMode = 'desktop';
+				$html.addClass('desktopNavMode').removeClass('mobileNavMode');
+				// only load slick when in desktop mode
+				self.setupDesktopMode();
+			} else {
+				curMode = 'mobile';
+				$html.removeClass('desktopNavMode').addClass('mobileNavMode');
+			}
+		},
+
+		doesShorterHeaderFit: function () {
+			var allowedWidth = desktopNavWidthRendered + 230; // img max-width is 200 + 30 logo buffer
+
+			if (desktopNavWidthRendered < 1 || $(window).width() < allowedWidth) {
+				return false;
+			} else {
+				return true;
+			}
+		},
+
+		getDesktopNavWidth: function () {
+			var $primaryDesktopNav = $(
+				'.tccc-cmp-navigation[data-design-package="/content/dam/journey/components/content/navigation/multi_tier_mobile_flyout"]'
+			).find('.nav_container > div > nav.desktopNav');
+			// Calculate minWindowWidth - Width needed to render top-level nav without breaking line.
+			// First time it runs it will return zero, need setTimeout so that it gets a chance to render before taking the measurement, then trigger resize event
+			setTimeout(function () {
+				if ($(window).width() > 767 && navitemwidths == 0) {
+					// Since width of nav elements doesn't change, will run once when val is zero
+					$primaryDesktopNav.find('ul .nav-item').each(function () {
+						navitemwidths += Math.round($(this).outerWidth(true));
+					});
+					desktopNavWidthRendered =
+						navitemwidths +
+						parseInt($primaryDesktopNav.css('padding-left')) +
+						parseInt($primaryDesktopNav.css('padding-right')) +
+						desktopBuffer;
+					$(window).trigger('resize');
+				}
+			}, 0);
+			return desktopNavWidthRendered;
+		},
+
+		isDesktopMode: function () {
+			var self = this;
+			var isDesktop;
+
+			if (
+				$html.hasClass('sm') ||
+				$html.hasClass('xs') ||
+				$(window).width() < 768
+			) {
+				isDesktop = false;
+			} else {
+				var minWidth;
+				// Too many nav items to fit on one line? If yes, then condense to mobile mode
+				if (desktopNavWidthRendered < desktopBuffer) {
+					// desktop width if it hasn't been set yet
+					self.getDesktopNavWidth();
+				}
+
+				// when the nav has the logo inline, the 'shorter_header' class is present
+				if ($('.nav_container').hasClass('shorter_header')) {
+					minWidth = desktopNavWidthRendered + 230; // img max-width is 200 + 30 logo buffer
+				} else {
+					minWidth = desktopNavWidthRendered;
+				}
+
+				if (minWidth < $(window).width()) {
+					isDesktop = true;
+				} else {
+					isDesktop = false;
+				}
+			}
+			return isDesktop;
+		},
+
+		checkShortHeader: function () {
+			if (!this.doesShorterHeaderFit()) {
+				curMode = 'hybrid';
+				$html.removeClass('desktopNavMode').addClass('mobileNavMode');
+				$navContainer.removeClass('shorter_header');
+			} else {
+				curMode = 'desktop';
+				$html.addClass('desktopNavMode').removeClass('mobileNavMode');
+				$navContainer.addClass('shorter_header');
+			}
+		},
+
+		setupDesktopMode: function () {
+			var self = this;
+
+			if (!desktopModeLoaded) {
+				var styleCssUrl =
+					tccc.global.getStaticRoot() + '/css/nextgen/slick.css';
+				var styleThemeCssUrl =
+					tccc.global.getStaticRoot() + '/css/nextgen/slick-theme.css';
+				tccc.global.getCSS(styleCssUrl);
+				tccc.global.getCSS(styleThemeCssUrl);
+
+				requirejs(
+					['jqueryNoConflict', 'slickSlider'],
+					function ($, slickSlider) {
+						navHeight = $container.find('.desktopNav').outerHeight();
+
+						var currentLink = $container.find(
+							'.desktopNav .nav-item.activeSelectedNav a'
+						);
+
+						if (currentLink.length) {
+							self.populateSecondaryDesktopNav(
+								$,
+								slickSlider,
+								self.removeHtml(currentLink.attr('href'))
+							);
+						}
+
+						// Switching between mobile and desktop breakpoints, sometimes
+						// you have to reinit slick
+						$container.on('REINIT_SLICK', function () {
+							setTimeout(function () {
+								if (
+									$secondaryDesktopNav.find('div.slick.slick-initialized')
+										.length
+								) {
+									$($secondaryDesktopNav).find('div.slick').slick('unslick');
+								}
+								$($secondaryDesktopNav)
+									.find('div.slick')
+									.slick(secondaryNavSlickCfg);
+								self.highlightCurrentLinkInSubnav();
+							}, 500);
+						});
+					}
+				);
+
+				var debounce = tccc.util.debounceMethod(
+					calculateDesktopLayout,
+					100,
+					false
+				);
+				window.onscroll = function () {
+					debounce();
+				};
+
+				calculateDesktopLayout();
+				function calculateDesktopLayout() {
+					if (
+						!currentlyRefreshing &&
+						curMode !== 'mobile' &&
+						!$mobileNavOverlay.is(':visible')
+					) {
+						scrollTop = $(window).scrollTop();
+						navHeight = $container.find('.desktopNav').outerHeight();
+
+						if ($navContainer.hasClass('shorter_header')) {
+							shortHeight = $navContainer.outerHeight();
+						} else {
+							shortHeight = 90; // default
+						}
+
+						var scrollDown = scrollTop > scrollPrev;
+						var scrollUp = !scrollDown;
+						var secondaryTop = 0;
+
+						if ($secondaryDesktopNav && $secondaryDesktopNav.length) {
+							secondaryTop = $secondaryDesktopNav.offset().top;
+						}
+
+						if (scrollTop === 0) {
+							// Top of page
+							$navContainer.css('top', '0');
+							$navContainer.removeClass('shorter_header');
+							$html.addClass('desktopNavMode').removeClass('mobileNavMode');
+							$container.css('margin-top', '0');
+							if (
+								$secondaryDesktopNavContainer &&
+								$secondaryDesktopNavContainer.length
+							) {
+								$secondaryDesktopNavContainer.removeClass('sticky-nav');
+							}
+						} else if (scrollTop < navHeight) {
+							self.checkShortHeader();
+							$container.css('margin-top', shortHeight);
+						} else if (scrollUp) {
+							// User is scrolling up
+							$navContainer.css('top', '0');
+
+							if (originalSecondaryDesktopNavTop > 0) {
+								if (scrollTop > originalSecondaryDesktopNavTop) {
+									$secondaryDesktopNavContainer.addClass('sticky-nav');
+									$secondaryDesktopNavContainer.css('top', shortHeight);
+								} else {
+									$secondaryDesktopNavContainer.removeClass('sticky-nav');
+								}
+							}
+						} else {
+							// User is scrolling down
+							self.checkShortHeader();
+
+							// set css top of shorter_header nav so it slides up when you hit secondary nav
+							if (
+								$secondaryDesktopNav &&
+								$secondaryDesktopNav.length &&
+								$secondaryDesktopNavContainer
+							) {
+								if (originalSecondaryDesktopNavTop === -1) {
+									originalSecondaryDesktopNavTop = $secondaryDesktopNav.offset()
+										.top;
+								}
+
+								if (
+									$secondaryDesktopNav.is(':visible') &&
+									scrollTop + shortHeight > secondaryTop
+								) {
+									// User has scrolled down past the top of the secondary nav
+									currentlyRefreshing = true;
+									var newTop = secondaryTop - (scrollTop + shortHeight);
+									if (newTop > secondaryTop) {
+										newTop = secondaryTop;
+									}
+									$navContainer.css('top', newTop + 'px');
+
+									if (scrollTop > originalSecondaryDesktopNavTop) {
+										// User has scrolled down past the bottom of the
+										// secondary nav
+										// make secondary nav sticky to top
+										$secondaryDesktopNavContainer.addClass('sticky-nav');
+										$secondaryDesktopNavContainer.css('top', '0');
+									} else {
+										$secondaryDesktopNavContainer.removeClass('sticky-nav');
+									}
+									currentlyRefreshing = false;
+								} else {
+									$navContainer.css('top', '0');
+									$secondaryDesktopNavContainer.removeClass('sticky-nav');
+								}
+							}
+						}
+						scrollPrev = scrollTop;
+					}
+				}
+			}
+			desktopModeLoaded = true;
+
+			$container.trigger('REINIT_SLICK');
+		},
+
+		removeHtml: function (str) {
+			// Remove .html from str (first instance only - this could be rewritten to regex /g )
+			if (str) {
+				return str.replace('.html', '');
+			} else {
+				return '';
+			}
+		},
+
+		addEventHandlers: function () {
+			var self = this;
+			var $dropdownToggle = $container.find('.dropdown-menu .has-children');
+
+			$dropdownToggle.off('click');
+			$dropdownToggle.on('click', function () {
+				var $el = $(this);
+				var link = $el.data('link');
+				if (link == newsPage) {
+					self.showSecondaryNewsPage(link);
+				} else {
+					self.showSecondaryPage(link);
+				}
+				$mobileNavMainPage.addClass('d-none');
+			});
+
+			//nav toggle on mobile and toggling logo and iconlinks.
+			$mobileNavtoggleIcon.on('click', function () {
+				self.toggleMobileDropdown();
+			});
+			$mobileNavOverlay.on('click', function () {
+				$mobileNavtoggleIcon.trigger('click');
+			});
+
+			$(document).on('click', '.subMenuChilditems', function () {
+				if (!$(this).hasClass('backLink')) {
+					$(this).closest('ul').empty();
+					//extractSubMenuList($container, 'next', $(this).text());
+				}
+			});
+		},
+
+		clearSecondaryDesktopNav: function ($) {
+			if ($secondaryDesktopNav.find('div.slick.slick-initialized').length) {
+				$('div.slick').slick('unslick');
+			}
+			$secondaryDesktopNav.find('nav.navbar div.slick').empty();
+		},
+
+		getSecondaryDesktopNavContainer: function () {
+			// Ideally, the secondary desktop nav will be nested inside 2 contentWrapper components.
+			// However, if this is mis-authored, either the single parent contentWrapper, or the
+			// $secondaryDesktopNav element itself should be used
+			var $parent;
+
+			if ($secondaryDesktopNav.length) {
+				// check if $secondaryDesktopNav is authored inside any contentWrapper
+				if ($secondaryDesktopNav.parents('.tccc-htl-contentWrapper').length) {
+					$parent = $(
+						$secondaryDesktopNav.parents('.tccc-htl-contentWrapper')[0]
+					);
+					if ($parent.parents('.tccc-htl-contentWrapper').length) {
+						// page is authored correctly - returning grandparent element
+						$parent = $($parent.parents('.tccc-htl-contentWrapper')[0]);
+					}
+					// else - page is authored incorrectly with only a single contentWrapper
+					return $parent;
+				} else {
+					// no parent contentWrapper found - use nav element
+					return $secondaryDesktopNav;
+				}
+			} else {
+				return $('');
+			}
+		},
+
+		populateSecondaryDesktopNav: function ($, slickSlider, navLink) {
+			var self = this;
+
+			// set here with jQuery version with slick
+			$secondaryDesktopNav = $(
+				'.tccc-cmp-navigation[data-design-package="/content/dam/journey/components/content/navigation/horizontal_scrolling"]'
+			);
+
+			$secondaryDesktopNavContainer = self.getSecondaryDesktopNavContainer();
+			if ($secondaryDesktopNavContainer) {
+				$secondaryDesktopNavContainer.addClass(
+					'secondary-desktop-nav-container'
+				);
+
+				self.clearSecondaryDesktopNav($); // prepare
+				$secondaryDesktopNavContainer.parent().css('margin-top', '7px'); // to get spacing above secondary nav, per styleguide
+
+				var sublist = self.searchNavListForLink(model, navLink);
+
+				if (sublist && sublist.pagetitle) {
+					// set first item
+					var $slick = $secondaryDesktopNav.find('nav.navbar .slick');
+					var $titleDiv = $('<div />').appendTo($slick);
+					var $nestedDiv = $('<div />')
+						.addClass('nested-div')
+						.appendTo($titleDiv);
+					var $a = $('<a />')
+						.attr('href', sublist.navigationPath + htmlExtension)
+						.appendTo($nestedDiv);
+					$('<span />').text(sublist.pagetitle).appendTo($nestedDiv.find('a'));
+
+					// output main child list
+					sublist.navModelList.forEach(function (v, k) {
+						var item = sublist.navModelList[k];
+						var slide = $('<div />').appendTo($slick);
+						var $nestedDiv = $('<div />')
+							.addClass('nested-div')
+							.appendTo(slide);
+						var $a = $('<a />')
+							.attr('href', item.navigationPath + htmlExtension)
+							.appendTo($nestedDiv);
+						$('<span />').text(item.pagetitle).appendTo($a);
+					});
+
+					if (slickSlider) {
+						$($secondaryDesktopNav)
+							.find('div.slick')
+							.slick(secondaryNavSlickCfg);
+						self.highlightCurrentLinkInSubnav();
+					} else {
+						// intermittent timing issue requires a slight delay
+						// before calling .slick if slickSlider is not yet ready
+						setTimeout(function () {
+							$($secondaryDesktopNav)
+								.find('div.slick')
+								.slick(secondaryNavSlickCfg);
+							self.highlightCurrentLinkInSubnav();
+						}, 600);
+					}
+				}
+			}
+		},
+
+		// Deep searches through navModelList array looking for
+		// result matching link and returns match
+		searchNavListForLink: function (navModelList, link) {
+			var self = this;
+			link = self.removeHtml(link);
+
+			for (var listitem in navModelList) {
+				var item = navModelList[listitem];
+
+				item.navigationPath = self.removeHtml(item.navigationPath);
+				if (item.navigationPath === link) {
+					return item;
+				} else if (item.navModelList && item.navModelList.length) {
+					// recursive call
+					var r = self.searchNavListForLink(item.navModelList, link);
+					if (r) {
+						return r;
+					}
+				}
+			}
+			// not found
+			return null;
+		},
+
+		// Event for when the Back button inside mobile nav is clicked
+		// Returns to a previous view of the navigation modal
+		backClicked: function (link) {
+			var self = this;
+			if (backHistory.length) {
+				// You are currently in a deep subnav
+				// Don't go back to the top level, instead look at the backHistory array
+				// and go to the last page listed there
+				link = backHistory.pop(); // removes and returns the last item of the array
+				self.showSecondaryPage(link);
+			} else {
+				// You are currently only 1 level deep - you can return to the top level
+				// $mobileIconLinks.css("visibility", "visible");
+				$secondaryNav.addClass('d-none');
+				$mobileNavMainPage.removeClass('d-none');
+			}
+		},
+
+		showSecondaryPage: function (link) {
+			var self = this;
+			var sublist;
+
+			var navModelList;
+			if (
+				model &&
+				model.navigationModel &&
+				model.navigationModel.navModelList
+			) {
+				navModelList = model.navigationModel.navModelList;
+			}
+
+			if (navModelList) {
+				sublist = self.searchNavListForLink(navModelList, link);
+			}
+
+			$secondaryNav.empty(); // clear old data
+
+			var backLabel = tccc.global.i18n('<% Back %>');
+
+			var backlistItem = $('<li />')
+				.attr('role', 'backMenuLink')
+				.appendTo($secondaryNav);
+			var backlistLink = $('<a />')
+				.addClass('subMenuChilditems backLink')
+				.attr('href', '#')
+				.attr('data-back', '')
+				.text(backLabel)
+				.appendTo(backlistItem);
+			$('<img />')
+				.attr('src', STATIC_ROOT + '/assets/nextgen/ico-arrow-left.svg')
+				.prependTo(backlistLink);
+			var li = $('<li class="sublist" />').appendTo($secondaryNav);
+			$('<a />')
+				.attr('href', sublist.navigationPath)
+				.text(sublist.pagetitle)
+				.wrapInner('<span />')
+				.appendTo(li);
+			$('<img />')
+				.attr('src', STATIC_ROOT + '/assets/nextgen/ico-arrow-right.svg')
+				.prependTo('.sublist a');
+
+			// output main child list
+			sublist.navModelList.forEach(function (v, k) {
+				var item = sublist.navModelList[k];
+				var li = $('<li/>').appendTo($secondaryNav);
+				var a; // <a>
+				if (item.navModelList.length) {
+					a = $('<a/>')
+						.attr('href', '#')
+						.attr('data-link', item.navigationPath + htmlExtension)
+						.addClass('has-children push-history dropdown-item')
+						.appendTo(li);
+					$('<span/>').text(item.pagetitle).appendTo(a);
+					$('<img/>')
+						.attr('src', STATIC_ROOT + '/assets/nextgen/ico-arrow-right.svg')
+						.appendTo(a);
+				} else {
+					a = $('<a/>')
+						.attr('href', item.navigationPath + htmlExtension)
+						.appendTo(li);
+					$('<span/>').text(item.pagetitle).appendTo(a);
+				}
+
+				self.highlightCurrentLink($container);
+			});
+
+			var $dropdownToggle = $container.find('.dropdown-menu .has-children');
+			$dropdownToggle.parent().addClass('navLevel2-has-children');
+			$dropdownToggle.off('click');
+			$dropdownToggle.on('click', function () {
+				var $el = $(this);
+				var sublink = $el.data('link');
+				if ($el.hasClass('push-history')) {
+					// You are entering a deep subnav view
+					// You will need to track how to get back to top level
+					backHistory.push(link);
+				}
+
+				if (sublink == newsPage) {
+					self.showSecondaryNewsPage(sublink);
+				} else {
+					self.showSecondaryPage(sublink);
+				}
+				$mobileNavMainPage.addClass('d-none');
+			});
+
+			$secondaryNav.removeClass('d-none');
+
+			$('.backLink').off('click');
+			$('.backLink').on('click', function () {
+				self.backClicked(sublist.navigationPath);
+			});
+		},
+		showSecondaryNewsPage: function (link) {
+			var self = this;
+			var sublist;
+			var newslist;
+			var tccc_component = tccc.util.getComponent(
+				tccc.components,
+				guid,
+				'navigation'
+			);
+
+			var navModelList;
+			if (
+				model &&
+				model.navigationModel &&
+				model.navigationModel.navModelList
+			) {
+				navModelList = model.navigationModel.navModelList;
+			}
+
+			if (navModelList) {
+				sublist = self.searchNavListForLink(navModelList, link);
+				newslist = tccc_component.searchResponseMapped.hits;
+			}
+
+			$secondaryNav.empty(); // clear old data
+
+			var backLabel = tccc.global.i18n('<% Back %>');
+
+			var backlistItem = $('<li />')
+				.attr('role', 'backMenuLink')
+				.appendTo($secondaryNav);
+			var backlistLink = $('<a />')
+				.addClass('subMenuChilditems backLink')
+				.attr('href', '#')
+				.attr('data-back', '')
+				.text(backLabel)
+				.appendTo(backlistItem);
+			$('<img />')
+				.attr('src', STATIC_ROOT + '/assets/nextgen/ico-arrow-left.svg')
+				.prependTo(backlistLink);
+			var li = $('<li class="sublist" />').appendTo($secondaryNav);
+			$('<a />')
+				.attr('href', sublist.navigationPath)
+				.text(sublist.pagetitle)
+				.wrapInner('<span />')
+				.appendTo(li);
+			$('<img />')
+				.attr('src', STATIC_ROOT + '/assets/nextgen/ico-arrow-right.svg')
+				.prependTo('.sublist a');
+
+			// output main child list
+			newslist.hit.forEach(function (v, k) {
+				var item = newslist.hit[k].fields;
+				var li = $('<li/>').appendTo($secondaryNav);
+				var a; // <a>
+				if (item.length) {
+					a = $('<a/>')
+						.attr('href', '#')
+						.attr('data-link', item.path + htmlExtension)
+						.addClass('has-children push-history dropdown-item')
+						.appendTo(li);
+					$('<span/>').text(item.title).appendTo(a);
+					$('<img/>')
+						.attr('src', STATIC_ROOT + '/assets/nextgen/ico-arrow-right.svg')
+						.appendTo(a);
+				} else {
+					//getting the full contentpath from meta tag and manipulating it to get the String to replace
+					var contentPath = document.querySelector(
+						'meta[property="content-path"]'
+					).content;
+					var itemPath = item.path;
+					if (contentPath) {
+						if (locale && locale == 'au-en') {
+							contentPath = contentPath.split('/').slice(1, 6).join('/');
+						} else {
+							contentPath = contentPath.split('/').slice(0, 5).join('/');
+						}
+					}
+					if (!browserURL.includes('content')) {
+						// update the href for shortened path
+						itemPath = itemPath.replace(contentPath, '');
+					}
+
+					a = $('<a/>')
+						.attr('href', itemPath + htmlExtension)
+						.appendTo(li);
+					$('<span/>').text(item.title).appendTo(a);
+				}
+
+				self.highlightCurrentLink($container);
+			});
+
+			var $dropdownToggle = $container.find('.dropdown-menu .has-children');
+			$dropdownToggle.parent().addClass('navLevel2-has-children');
+			$dropdownToggle.off('click');
+			$dropdownToggle.on('click', function () {
+				var $el = $(this);
+				var sublink = $el.data('link');
+				if ($el.hasClass('push-history')) {
+					// You are entering a deep subnav view
+					// You will need to track how to get back to top level
+					backHistory.push(link);
+				}
+
+				if (sublink == newsPage) {
+					self.showSecondaryNewsPage(sublink);
+				} else {
+					self.showSecondaryPage(sublink);
+				}
+				$mobileNavMainPage.addClass('d-none');
+			});
+
+			$secondaryNav.removeClass('d-none');
+
+			$('.backLink').off('click');
+			$('.backLink').on('click', function () {
+				self.backClicked(sublist.navigationPath);
+			});
+		},
+
+		toggleMobileDropdown: function () {
+			if ($mobileNavtoggleIcon.attr('aria-expanded') == 'false') {
+				// expand
+				$mobileNavtoggleIcon.addClass('expanded');
+				// $mobileIconLinks.css("visibility", "hidden");
+				$mobileNavOverlay.removeClass('d-none');
+			} else {
+				// collapse
+				$mobileNavtoggleIcon.removeClass('expanded');
+				// $mobileIconLinks.css("visibility", "visible");
+				$mobileNavOverlay.addClass('d-none');
+			}
+		},
+
+		deepSearch: function (url, model, parent) {
+			var self = this;
+			var listitem;
+			var href;
+			var i;
+
+			// check top level first
+			for (i in model) {
+				listitem = model[i];
+				href = self.removeHtml(listitem.navigationPath);
+				href = self.formatUrl(href);
+
+				if (url === href) {
+					// Found!
+					return href;
+				}
+			}
+
+			// look deeper
+			for (i in model) {
+				listitem = model[i];
+
+				if (listitem && listitem.navModelList) {
+					if (self.deepSearch(url, listitem.navModelList, parent)) {
+						// recursive
+						if (parent) {
+							return parent;
+						} else {
+							return self.formatUrl(listitem.navigationPath);
+						}
+					}
+				}
+			}
+
+			return null; // not found at this level
+		},
+
+		formatUrl: function (url, lookUpALevel) {
+			var self = this;
+			url = url.substring(
+				0,
+				url.indexOf('#') == -1 ? url.length : url.indexOf('#')
+			);
+			url = url.substring(
+				0,
+				url.indexOf('?') == -1 ? url.length : url.indexOf('?')
+			);
+
+			if (lookUpALevel) {
+				var lastpath = url.substr(url.lastIndexOf('/') + 1);
+				url = url.replace(lastpath, '');
+				url = self.removeTrailingSlash(url);
+				url = self.formatUrl(url);
+			} else {
+				url = url.substr(url.lastIndexOf('/') + 1);
+			}
+			url = self.removeHtml(url);
+
+			return url;
+		},
+
+		removeTrailingSlash: function (str) {
+			return str.replace(/\/$/, '');
+		},
+
+		// Add a class to the navigation link matching current page.
+		// Assumes the current URL perfectly matches the nav link
+		highlightCurrentLink: function ($container) {
+			var self = this;
+
+			// VanityPath Fix :Get current page URL from content-path
+			var url = document.querySelector('meta[property="content-path"]').content;
+
+			var original_url = url;
+
+			url = self.formatUrl(url);
+
+			// Find url in primary nav data-model
+			var modeldata = model.navigationModel.navModelList;
+			// strip out sections with more than 50 subpages (News) so this runs faster
+			// lodash.remove(modeldata, function(item) {
+			// 	if (item && item.navModelList.length > 50) {
+			// 		return true;
+			// 	}
+			// 	else {
+			// 		return false;
+			// 	}
+			// });
+
+			var parent = null;
+
+			url = self.deepSearch(url, modeldata, parent);
+			if (!url) {
+				// current page was not found in nav
+				// check if parent page matches primary nav
+				url = self.formatUrl(original_url, true);
+				url = self.deepSearch(url, modeldata, parent);
+			}
+
+			var $navItem = $container
+				.find('.navbar li')
+				.not('.navbarIcons')
+				.not('.navbarRightItems'); // look in both mobile and desktop navs
+
+			$navItem.removeClass('activeSelectedNav');
+
+			// Loop all menu items
+			$navItem.each(function () {
+				// if the url matches the href on the menu item
+				var href = $(this).find('a').attr('href'),
+					data = $(this).find('a').data('link'); // mobile uses data-link instead of href value
+
+				if (href == '#') {
+					// mobile links
+					href = data;
+				}
+
+				if (typeof href !== 'undefined') {
+					href = href.substr(href.lastIndexOf('/') + 1);
+					href = self.removeHtml(href);
+
+					$(this).attr('data-li', href); // add as a data-li attribute to li so we can hide the investors link
+
+					if (url === href) {
+						// Found - Add active class
+						$(this).addClass('activeSelectedNav');
+						$('.sublist').removeClass('activeSelectedNav'); // remove if it's a subnav sub heading link because it's probably not selected
+					}
+				}
+			});
+		},
+	};
+
+	if (tccc.app_ready) {
+		Navigation.init();
+		window.Navigation = Navigation;
+	} else {
+		$(window).on('APP_READY', function () {
+			Navigation.init();
+			window.Navigation = Navigation;
+		});
+	}
+})();
+
+//# sourceURL=prototype/app/components/navigation/journey/js/multi_tier_mobile_flyout-navigation.js</script><script async="" src="./Homepage_files/gtm.js.download"></script><script>
+            window.globalDataLayerObj = [{"tccc.attributes":{"tccc.dataLayer.version":"1.0","tccc.dataLayer.geoUnit":"","tccc.dataLayer.siteEnvironment":"must-set-per-environment"},"tccc.website":{"businessUnit":"","siteLanguage":"","baseUrl":"www.coca-colaindia.com","sitePlatform":"AEM","sitePlatformVersion":"6.4"},"tccc.page":{"tccc.page.platform":"AEM","tccc.page.page.uri":"http://tccc-prod-journey-in-all-en.tccc-aem.com/homepage","tccc.page.country":"afganistan","tccc.page.language":"af","tccc.page.name":"Homepage","tccc.page.category.content":"/content/journey/in/en/homepage","tccc.page.pagetype":"","tccc.page.tags":[]}}];
+        </script>
+    
+    
+    <!-- OneTrust JS snippet -->
+        
+    
+    
+        <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': 
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], 
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); 
+})(window,document,'script','dataLayer','GTM-WPGDXSV');</script>
+<!-- End Google Tag Manager -->
+    
+
+    <!-- AEP Launch Property -->
+    
+
+    
+    <!-- Test&Target JS snippet -->
+        
+    
+    
+
+    
+
+    
+<link rel="stylesheet" href="./Homepage_files/clientlib-base.min.css" type="text/css">
+
+
+
+
+ 
+    
+    
+    
+
+    
+
+    
+    
+    
+    
+<script type="text/javascript" src="./Homepage_files/jquery.min.js.download"></script>
+<script type="text/javascript" src="./Homepage_files/utils.min.js.download"></script>
+
+
+         
+    
+
+    
+    	
+	<style type="text/css">/* Button default configuration */
+.tccc-cmp-button button {
+  background-color: #dddddd;
+  /* Keep this backbround color because iPhone and iPad don't have a default background color */
+  white-space: normal !important;
+}
+</style><style type="text/css">.footer {
+  padding: 0px !important;
+}
+.footer .tccc-cmp-footer {
+  background: #4a4a4a;
+}
+.footer .tccc-cmp-footer .screen-reader-only {
+  position: absolute;
+  width: 1px;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  white-space: nowrap;
+}
+.footer .tccc-cmp-footer .text-center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+html.xs .footer .tccc-cmp-footer .footer__row,
+html.sm .footer .tccc-cmp-footer .footer__row {
+  display: block;
+  width: 100%;
+  max-width: 100vw;
+}
+.footer .tccc-cmp-footer .footer__logo {
+  position: relative;
+  padding: 1.063rem 1.25rem;
+}
+html.xs .footer .tccc-cmp-footer .footer__logo,
+html.sm .footer .tccc-cmp-footer .footer__logo {
+  padding: 1.25rem 0px;
+}
+.footer .tccc-cmp-footer .footer__logo .footer__logo-text {
+  text-align: center;
+}
+.footer .tccc-cmp-footer .footer__logo .footer__logo-text p {
+  text-transform: uppercase;
+  color: #bababa;
+  font-size: 1.375rem;
+  font-weight: bold;
+  line-height: 1.813rem;
+  text-align: center;
+}
+.footer .tccc-cmp-footer .footer__logo .footer__logo-text p a {
+  color: #bababa;
+  text-decoration: none;
+}
+.footer .tccc-cmp-footer .footer__logo .footer__logo-text p a:hover {
+  color: #bababa;
+}
+.footer .tccc-cmp-footer .footer__logo .footer__logo-img {
+  max-width: 100%;
+  text-align: center;
+}
+.footer .tccc-cmp-footer .footer__logo .footer__logo-img img {
+  max-width: 100%;
+}
+html.xs .footer .tccc-cmp-footer .footer__logo .footer__logo-main,
+html.sm .footer .tccc-cmp-footer .footer__logo .footer__logo-main {
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #bababa;
+}
+.footer .tccc-cmp-footer .footer__logo .footerLinkList {
+  position: absolute;
+  right: 0px;
+  top: 30%;
+  text-align: center;
+  padding: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+html.xs .footer .tccc-cmp-footer .footer__logo .footerLinkList,
+html.sm .footer .tccc-cmp-footer .footer__logo .footerLinkList {
+  position: relative;
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #bababa;
+  padding: 0.75rem;
+}
+.footer .tccc-cmp-footer .footer__logo .footerLinkList li {
+  list-style-type: none;
+  display: inline;
+  font-size: 0.75rem !important;
+  line-height: 1rem !important;
+}
+.footer .tccc-cmp-footer .footer__logo .footerLinkList li a {
+  padding: 0 0.625rem;
+  font-weight: 100;
+  color: #bababa;
+  border-right: 1px solid #bababa;
+}
+.footer .tccc-cmp-footer .footer__logo .footerLinkList li a:hover {
+  text-decoration: none;
+}
+.footer .tccc-cmp-footer .footer__logo .footerLinkList li:last-child a,
+.footer .tccc-cmp-footer .footer__logo .footerLinkList li.no-border a {
+  border-right: 0 !important;
+}
+.footer .tccc-cmp-footer .socialMediaList {
+  text-align: center;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+}
+html.xs .footer .tccc-cmp-footer .socialMediaList,
+html.sm .footer .tccc-cmp-footer .socialMediaList {
+  display: block;
+  width: 100%;
+}
+.footer .tccc-cmp-footer .socialMediaList li {
+  list-style-type: none;
+  display: inline;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+.footer .tccc-cmp-footer .socialMediaList li a {
+  padding: 0 0.625rem;
+  font-weight: 100;
+  color: #bababa;
+}
+.footer .tccc-cmp-footer .socialMediaList li a:hover {
+  text-decoration: none;
+}
+html.xs .footer .tccc-cmp-footer .socialMediaList li a,
+html.sm .footer .tccc-cmp-footer .socialMediaList li a {
+  padding: 0 0.25rem;
+}
+.footer .tccc-cmp-footer .socialMediaList li:last-child a {
+  border-right: 0 !important;
+}
+.footer .tccc-cmp-footer .footer__text .footer__content {
+  -webkit-align-content: baseline;
+      -ms-flex-line-pack: baseline;
+          align-content: baseline;
+  margin: 0 auto;
+  display: block !important;
+}
+.footer .tccc-cmp-footer .footer__text p {
+  color: #bababa;
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+  line-height: 1.188rem;
+}
+.footer .tccc-cmp-footer .footer__description {
+  display: block;
+  text-align: center !important;
+  padding: 2.5rem 0;
+}
+html.xs .footer .tccc-cmp-footer .footer__description,
+html.sm .footer .tccc-cmp-footer .footer__description {
+  padding: 1.25 0.75rem 0.75rem;
+}
+.footer .tccc-cmp-footer .footer__description p {
+  font-size: 0.75rem;
+  line-height: 1.1rem;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+html.xs .footer .tccc-cmp-footer .footer__description p,
+html.sm .footer .tccc-cmp-footer .footer__description p {
+  width: 100%;
+  max-width: 95vw;
+  font-size: 0.6rem;
+}
+.footer .tccc-cmp-footer .footer__description br {
+  margin-bottom: 0.25rem;
+}
+html.xs .footer .tccc-cmp-footer .footer__description br,
+html.sm .footer .tccc-cmp-footer .footer__description br {
+  margin-bottom: 1rem;
+}
+</style><style type="text/css">/*!
+ * OverlayScrollbars
+ * https://github.com/KingSora/OverlayScrollbars
+ *
+ * Version: 1.6.3
+ *
+ * Copyright KingSora.
+ * https://github.com/KingSora
+ *
+ * Released under the MIT license.
+ * Date: 31.01.2019
+ */
+html.os-html,html.os-html > .os-host{display:block;overflow:hidden;box-sizing:border-box;height:100%!important;width:100%!important;min-width:100%!important;min-height:100%!important;margin:0!important;position:absolute!important}html.os-html > .os-host > .os-padding{position:absolute}body.os-dragging,body.os-dragging *{cursor:default}.os-host,.os-host-textarea{position:relative;overflow:visible!important;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;-ms-flex-line-pack:start;align-content:flex-start;-webkit-box-align:start;-ms-flex-align:start;-ms-grid-row-align:flex-start;align-items:flex-start}.os-host-flexbox{overflow:hidden!important;display:-webkit-box;display:-ms-flexbox;display:flex}.os-host-flexbox > .os-size-auto-observer{height:inherit!important}.os-host-flexbox > .os-content-glue{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-negative:0;flex-shrink:0}.os-host-flexbox > .os-size-auto-observer,.os-host-flexbox > .os-content-glue{min-height:0;min-width:0;-webkit-box-flex:0;-ms-flex-positive:0;flex-grow:0;-ms-flex-negative:1;flex-shrink:1;-ms-flex-preferred-size:auto;flex-basis:auto}#os-dummy-scrollbar-size{position:fixed;opacity:0;-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);visibility:hidden;overflow:scroll;height:500px;width:500px}#os-dummy-scrollbar-size > div{width:200%;height:200%;margin:10px 0}#os-dummy-scrollbar-size,.os-viewport{-ms-overflow-style:scrollbar!important}.os-viewport-native-scrollbars-invisible#os-dummy-scrollbar-size::-webkit-scrollbar,.os-viewport-native-scrollbars-invisible.os-viewport::-webkit-scrollbar,.os-viewport-native-scrollbars-invisible#os-dummy-scrollbar-size::-webkit-scrollbar-corner,.os-viewport-native-scrollbars-invisible.os-viewport::-webkit-scrollbar-corner{display:none!important;width:0!important;height:0!important;visibility:hidden!important;background:transparent!important}.os-content-glue{box-sizing:inherit;max-height:100%;max-width:100%;width:100%;pointer-events:none}.os-padding{box-sizing:inherit;direction:inherit;position:absolute;overflow:visible;padding:0;margin:0;left:0;top:0;bottom:0;right:0;width:auto!important;height:auto!important;z-index:1}.os-host-overflow > .os-padding{overflow:hidden}.os-viewport{direction:inherit!important;box-sizing:inherit!important;resize:none!important;outline:none!important;position:absolute;overflow:hidden;top:0;left:0;bottom:0;right:0;padding:0;margin:0;-webkit-overflow-scrolling:touch}.os-content-arrange{position:absolute;z-index:-1;min-height:1px;min-width:1px;pointer-events:none}.os-content{direction:inherit;box-sizing:border-box!important;position:relative;display:block;height:100%;width:100%;height:100%;width:100%;visibility:visible}.os-content > .os-textarea{box-sizing:border-box!important;direction:inherit!important;background:transparent!important;outline:0 none transparent!important;overflow:hidden!important;position:absolute!important;display:block!important;top:0!important;left:0!important;margin:0!important;border-radius:0!important;float:none!important;-webkit-filter:none!important;filter:none!important;border:none!important;resize:none!important;-webkit-transform:none!important;transform:none!important;max-width:none!important;max-height:none!important;box-shadow:none!important;-webkit-perspective:none!important;perspective:none!important;opacity:1!important;z-index:1!important;clip:auto!important;vertical-align:baseline!important;padding:0}.os-host-rtl > .os-padding > .os-viewport > .os-content > .os-textarea{right:0!important}.os-content > .os-textarea-cover{z-index:-1;pointer-events:none}.os-content > .os-textarea[wrap='off']{white-space:pre!important;margin:0!important}.os-text-inherit{font-family:inherit;font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;text-transform:inherit;text-decoration:inherit;text-indent:inherit;text-align:inherit;text-shadow:inherit;text-overflow:inherit;letter-spacing:inherit;word-spacing:inherit;line-height:inherit;unicode-bidi:inherit;direction:inherit;color:inherit;cursor:text}.os-resize-observer,.os-resize-observer-host{box-sizing:inherit;display:block;opacity:0;position:absolute;top:0;left:0;height:100%;width:100%;overflow:hidden;pointer-events:none;z-index:-1}.os-resize-observer-host{padding:inherit;border:inherit;border-color:transparent;border-style:solid;box-sizing:border-box}.os-resize-observer-host:after{content:''}.os-resize-observer-host > .os-resize-observer,.os-resize-observer-host:after{height:200%;width:200%;padding:inherit;border:inherit;margin:0;display:block;box-sizing:content-box}.os-resize-observer.observed,object.os-resize-observer{box-sizing:border-box!important}.os-size-auto-observer{box-sizing:inherit!important;height:100%;width:inherit;max-width:1px;position:relative;float:left;max-height:1px;overflow:hidden;z-index:-1;padding:0;margin:0;pointer-events:none;-webkit-box-flex:inherit;-ms-flex-positive:inherit;flex-grow:inherit;-ms-flex-negative:0;flex-shrink:0;-ms-flex-preferred-size:0;flex-basis:0}.os-size-auto-observer > .os-resize-observer{width:1000%;height:1000%;min-height:1px;min-width:1px}.os-resize-observer-item{position:absolute;top:0;right:0;bottom:0;left:0;overflow:hidden;z-index:-1;opacity:0;direction:ltr!important;-webkit-box-flex:0!important;-ms-flex:none!important;flex:none!important}.os-resize-observer-item-final{position:absolute;left:0;top:0;-webkit-transition:none!important;transition:none!important;-webkit-box-flex:0!important;-ms-flex:none!important;flex:none!important}.os-resize-observer{-webkit-animation-duration:.001s;animation-duration:.001s;-webkit-animation-name:hs-resize-observer-dummy-animation;animation-name:hs-resize-observer-dummy-animation}.os-host-transition > .os-scrollbar,.os-host-transition > .os-scrollbar-corner{-webkit-transition:opacity 0.3s,visibility 0.3s,top 0.3s,right 0.3s,bottom 0.3s,left .3s;transition:opacity 0.3s,visibility 0.3s,top 0.3s,right 0.3s,bottom 0.3s,left .3s}html.os-html > .os-host > .os-scrollbar{position:absolute;z-index:999999}.os-scrollbar,.os-scrollbar-corner{position:absolute;opacity:1;-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);z-index:1}.os-scrollbar-corner{bottom:0;right:0}.os-scrollbar{pointer-events:none}.os-scrollbar-track{pointer-events:auto;position:relative;height:100%;width:100%;padding:0!important;border:none!important}.os-scrollbar-handle{pointer-events:auto;position:absolute;width:100%;height:100%}.os-scrollbar-handle-off,.os-scrollbar-track-off{pointer-events:none}.os-scrollbar.os-scrollbar-unusable,.os-scrollbar.os-scrollbar-unusable *{pointer-events:none!important}.os-scrollbar.os-scrollbar-unusable .os-scrollbar-handle{opacity:0!important}.os-scrollbar-horizontal{bottom:0;left:0}.os-scrollbar-vertical{top:0;right:0}.os-host-rtl > .os-scrollbar-horizontal{right:0}.os-host-rtl > .os-scrollbar-vertical{right:auto;left:0}.os-host-rtl > .os-scrollbar-corner{right:auto;left:0}.os-scrollbar-auto-hidden,.os-padding + .os-scrollbar-corner,.os-host-resize-disabled.os-host-scrollbar-horizontal-hidden > .os-scrollbar-corner,.os-host-scrollbar-horizontal-hidden > .os-scrollbar-horizontal,.os-host-resize-disabled.os-host-scrollbar-vertical-hidden > .os-scrollbar-corner,.os-host-scrollbar-vertical-hidden > .os-scrollbar-vertical,.os-scrollbar-horizontal.os-scrollbar-auto-hidden + .os-scrollbar-vertical + .os-scrollbar-corner,.os-scrollbar-horizontal + .os-scrollbar-vertical.os-scrollbar-auto-hidden + .os-scrollbar-corner,.os-scrollbar-horizontal.os-scrollbar-auto-hidden + .os-scrollbar-vertical.os-scrollbar-auto-hidden + .os-scrollbar-corner{opacity:0;visibility:hidden;pointer-events:none}.os-scrollbar-corner-resize-both{cursor:nwse-resize}.os-host-rtl > .os-scrollbar-corner-resize-both{cursor:nesw-resize}.os-scrollbar-corner-resize-horizontal{cursor:ew-resize}.os-scrollbar-corner-resize-vertical{cursor:ns-resize}.os-dragging .os-scrollbar-corner.os-scrollbar-corner-resize{cursor:default}.os-host-resize-disabled.os-host-scrollbar-horizontal-hidden > .os-scrollbar-vertical{top:0;bottom:0}.os-host-resize-disabled.os-host-scrollbar-vertical-hidden > .os-scrollbar-horizontal,.os-host-rtl.os-host-resize-disabled.os-host-scrollbar-vertical-hidden > .os-scrollbar-horizontal{right:0;left:0}.os-scrollbar:hover,.os-scrollbar-corner.os-scrollbar-corner-resize{opacity:1!important;visibility:visible!important}.os-scrollbar-corner.os-scrollbar-corner-resize{background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyAgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIiAgIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIgICB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgICB3aWR0aD0iMTAiICAgaGVpZ2h0PSIxMCIgICB2ZXJzaW9uPSIxLjEiPiAgPGcgICAgIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsLTEwNDIuMzYyMikiICAgICBzdHlsZT0iZGlzcGxheTppbmxpbmUiPiAgICA8cGF0aCAgICAgICBzdHlsZT0iZmlsbDojMDAwMDAwO2ZpbGwtb3BhY2l0eTowLjQ5NDExNzY1O2ZpbGwtcnVsZTpldmVub2RkO3N0cm9rZTpub25lIiAgICAgICBkPSJtIDcuNDI0MjE4NywxMDQyLjM2MjIgYyAtMC43MjM1NzkyLDAgLTEuMzEwMTU2MiwwLjU4NjYgLTEuMzEwMTU2MiwxLjMxMDIgMCwwLjI5OSAwLjEwNDM0MTksMC41NzEgMC4yNzI5NDkyLDAuNzkxNSAwLjIwOTEwMjQsMC4xNDEzIDAuNDY1NjIwNiwwLjIxODQgMC43MzY5NjI5LDAuMjE4NCAwLjcyMzU3OTMsMCAxLjMxMDE1NjMsLTAuNTg2NiAxLjMxMDE1NjMsLTEuMzEwMiAwLC0wLjI3MTMgLTAuMDc3MDkzLC0wLjUyNzggLTAuMjE4MzU5NCwtMC43MzcgLTAuMjIwNDk0MSwtMC4xNjg2IC0wLjQ5MjU0NDMsLTAuMjcyOSAtMC43OTE1NTI4LC0wLjI3MjkgeiBtIDAsMy4wODQzIGMgLTAuNzIzNTc5MiwwIC0xLjMxMDE1NjIsMC41ODY2IC0xLjMxMDE1NjIsMS4zMTAyIDAsMC4yOTkgMC4xMDQzNDE5LDAuNTcxIDAuMjcyOTQ5MiwwLjc5MTUgMC4yMDkxMDI0LDAuMTQxMyAwLjQ2NTYyMDYsMC4yMTg0IDAuNzM2OTYyOSwwLjIxODQgMC43MjM1NzkzLDAgMS4zMTAxNTYzLC0wLjU4NjYgMS4zMTAxNTYzLC0xLjMxMDIgMCwtMC4yNzEzIC0wLjA3NzA5MywtMC41Mjc4IC0wLjIxODM1OTQsLTAuNzM2OSAtMC4yMjA0OTQxLC0wLjE2ODYgLTAuNDkyNTQ0MywtMC4yNzMgLTAuNzkxNTUyOCwtMC4yNzMgeiBtIC0zLjA4NDMyNjEsMCBjIC0wLjcyMzU3OTMsMCAtMS4zMTAxNTYzLDAuNTg2NiAtMS4zMTAxNTYzLDEuMzEwMiAwLDAuMjk5IDAuMTA0MzQxOSwwLjU3MSAwLjI3Mjk0OTIsMC43OTE1IDAuMjA5MTAyNCwwLjE0MTMgMC40NjU2MjA3LDAuMjE4NCAwLjczNjk2MjksMC4yMTg0IDAuNzIzNTc5MywwIDEuMzEwMTU2MywtMC41ODY2IDEuMzEwMTU2MywtMS4zMTAyIDAsLTAuMjcxMyAtMC4wNzcwOTMsLTAuNTI3OCAtMC4yMTgzNTk0LC0wLjczNjkgLTAuMjIwNDk0LC0wLjE2ODYgLTAuNDkyNTQ0MiwtMC4yNzMgLTAuNzkxNTUyNywtMC4yNzMgeiBtIC0zLjAyOTczNjQsMy4wMjk4IEMgMC41ODY1NzY5MywxMDQ4LjQ3NjMgMCwxMDQ5LjA2MjggMCwxMDQ5Ljc4NjQgYyAwLDAuMjk5IDAuMTA0MzQxOSwwLjU3MTEgMC4yNzI5NDkyMiwwLjc5MTYgMC4yMDkxMDIyOSwwLjE0MTIgMC40NjU2MjA2NSwwLjIxODMgMC43MzY5NjI4OCwwLjIxODMgMC43MjM1NzkzLDAgMS4zMTAxNTYzLC0wLjU4NjUgMS4zMTAxNTYzLC0xLjMxMDEgMCwtMC4yNzE0IC0wLjA3NzA5MywtMC41Mjc5IC0wLjIxODM1OTQsLTAuNzM3IC0wLjIyMDQ5NDEsLTAuMTY4NiAtMC40OTI1NDQzLC0wLjI3MjkgLTAuNzkxNTUyOCwtMC4yNzI5IHogbSAzLjAyOTczNjQsMCBjIC0wLjcyMzU3OTMsMCAtMS4zMTAxNTYzLDAuNTg2NSAtMS4zMTAxNTYzLDEuMzEwMSAwLDAuMjk5IDAuMTA0MzQxOSwwLjU3MTEgMC4yNzI5NDkyLDAuNzkxNiAwLjIwOTEwMjQsMC4xNDEyIDAuNDY1NjIwNywwLjIxODMgMC43MzY5NjI5LDAuMjE4MyAwLjcyMzU3OTMsMCAxLjMxMDE1NjMsLTAuNTg2NSAxLjMxMDE1NjMsLTEuMzEwMSAwLC0wLjI3MTQgLTAuMDc3MDkzLC0wLjUyNzkgLTAuMjE4MzU5NCwtMC43MzcgLTAuMjIwNDk0LC0wLjE2ODYgLTAuNDkyNTQ0MiwtMC4yNzI5IC0wLjc5MTU1MjcsLTAuMjcyOSB6IG0gMy4wODQzMjYxLDAgYyAtMC43MjM1NzkyLDAgLTEuMzEwMTU2MiwwLjU4NjUgLTEuMzEwMTU2MiwxLjMxMDEgMCwwLjI5OSAwLjEwNDM0MTksMC41NzExIDAuMjcyOTQ5MiwwLjc5MTYgMC4yMDkxMDI0LDAuMTQxMiAwLjQ2NTYyMDYsMC4yMTgzIDAuNzM2OTYyOSwwLjIxODMgMC43MjM1NzkzLDAgMS4zMTAxNTYzLC0wLjU4NjUgMS4zMTAxNTYzLC0xLjMxMDEgMCwtMC4yNzE0IC0wLjA3NzA5MywtMC41Mjc5IC0wLjIxODM1OTQsLTAuNzM3IC0wLjIyMDQ5NDEsLTAuMTY4NiAtMC40OTI1NDQzLC0wLjI3MjkgLTAuNzkxNTUyOCwtMC4yNzI5IHoiLz4gIDwvZz4gIDxnICAgICBzdHlsZT0iZGlzcGxheTppbmxpbmUiPiAgICA8cGF0aCAgICAgICBzdHlsZT0iZmlsbDojZmZmZmZmO2ZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpldmVub2RkO3N0cm9rZTpub25lIiAgICAgICBkPSJtIDguMjE1NzcxNSwwLjI3Mjk0OTIyIGMgMC4xNDEyNjY3LDAuMjA5MTAyMjkgMC4yMTgzNTk0LDAuNDY1NjIwNjUgMC4yMTgzNTk0LDAuNzM2OTYyODggMCwwLjcyMzU3OTMgLTAuNTg2NTc3LDEuMzEwMTU2MyAtMS4zMTAxNTYzLDEuMzEwMTU2MyAtMC4yNzEzNDIzLDAgLTAuNTI3ODYwNSwtMC4wNzcwOTMgLTAuNzM2OTYyOSwtMC4yMTgzNTk0IDAuMjM5NDEwNCwwLjMxMzA4NTkgMC42MTI2MzYyLDAuNTE4NjAzNSAxLjAzNzIwNywwLjUxODYwMzUgMC43MjM1NzkzLDAgMS4zMTAxNTYzLC0wLjU4NjU3NyAxLjMxMDE1NjMsLTEuMzEwMTU2MyAwLC0wLjQyNDU3MDc2IC0wLjIwNTUxNzYsLTAuNzk3Nzk2NTkgLTAuNTE4NjAzNSwtMS4wMzcyMDY5OCB6IG0gMCwzLjA4NDMyNjE4IGMgMC4xNDEyNjY3LDAuMjA5MTAyMyAwLjIxODM1OTQsMC40NjU2MjA2IDAuMjE4MzU5NCwwLjczNjk2MjkgMCwwLjcyMzU3OTMgLTAuNTg2NTc3LDEuMzEwMTU2MiAtMS4zMTAxNTYzLDEuMzEwMTU2MiAtMC4yNzEzNDIzLDAgLTAuNTI3ODYwNSwtMC4wNzcwOTMgLTAuNzM2OTYyOSwtMC4yMTgzNTkzIDAuMjM5NDEwNCwwLjMxMzA4NTkgMC42MTI2MzYyLDAuNTE4NjAzNSAxLjAzNzIwNywwLjUxODYwMzUgMC43MjM1NzkzLDAgMS4zMTAxNTYzLC0wLjU4NjU3NyAxLjMxMDE1NjMsLTEuMzEwMTU2MyAwLC0wLjQyNDU3MDggLTAuMjA1NTE3NiwtMC43OTc3OTY3IC0wLjUxODYwMzUsLTEuMDM3MjA3IHogbSAtMy4wODQzMjYyLDAgYyAwLjE0MTI2NjcsMC4yMDkxMDIzIDAuMjE4MzU5NCwwLjQ2NTYyMDYgMC4yMTgzNTk0LDAuNzM2OTYyOSAwLDAuNzIzNTc5MyAtMC41ODY1NzcsMS4zMTAxNTYyIC0xLjMxMDE1NjMsMS4zMTAxNTYyIC0wLjI3MTM0MjIsMCAtMC41Mjc4NjA1LC0wLjA3NzA5MyAtMC43MzY5NjI5LC0wLjIxODM1OTMgMC4yMzk0MTA0LDAuMzEzMDg1OSAwLjYxMjYzNjMsMC41MTg2MDM1IDEuMDM3MjA3MSwwLjUxODYwMzUgMC43MjM1NzkzLDAgMS4zMTAxNTYyLC0wLjU4NjU3NyAxLjMxMDE1NjIsLTEuMzEwMTU2MyAwLC0wLjQyNDU3MDggLTAuMjA1NTE3NSwtMC43OTc3OTY3IC0wLjUxODYwMzUsLTEuMDM3MjA3IHogTSAyLjEwMTcwOSw2LjM4NzAxMTcgYyAwLjE0MTI2NjcsMC4yMDkxMDI0IDAuMjE4MzU5NCwwLjQ2NTYyMDYgMC4yMTgzNTk0LDAuNzM2OTYyOSAwLDAuNzIzNTc5MyAtMC41ODY1NzcsMS4zMTAxNTYzIC0xLjMxMDE1NjMsMS4zMTAxNTYzIC0wLjI3MTM0MjIzLDAgLTAuNTI3ODYwNTksLTAuMDc3MDkzIC0wLjczNjk2Mjg4LC0wLjIxODM1OTQgMC4yMzk0MTAzOSwwLjMxMzA4NTkgMC42MTI2MzYyMiwwLjUxODYwMzUgMS4wMzcyMDY5OCwwLjUxODYwMzUgMC43MjM1NzkzLDAgMS4zMTAxNTYzLC0wLjU4NjU3NyAxLjMxMDE1NjMsLTEuMzEwMTU2MyAwLC0wLjQyNDU3MDggLTAuMjA1NTE3NiwtMC43OTc3OTY2IC0wLjUxODYwMzUsLTEuMDM3MjA3IHogbSAzLjAyOTczNjMsMCBjIDAuMTQxMjY2NywwLjIwOTEwMjQgMC4yMTgzNTk0LDAuNDY1NjIwNiAwLjIxODM1OTQsMC43MzY5NjI5IDAsMC43MjM1NzkzIC0wLjU4NjU3NywxLjMxMDE1NjMgLTEuMzEwMTU2MywxLjMxMDE1NjMgLTAuMjcxMzQyMiwwIC0wLjUyNzg2MDUsLTAuMDc3MDkzIC0wLjczNjk2MjksLTAuMjE4MzU5NCAwLjIzOTQxMDQsMC4zMTMwODU5IDAuNjEyNjM2MywwLjUxODYwMzUgMS4wMzcyMDcxLDAuNTE4NjAzNSAwLjcyMzU3OTMsMCAxLjMxMDE1NjIsLTAuNTg2NTc3IDEuMzEwMTU2MiwtMS4zMTAxNTYzIDAsLTAuNDI0NTcwOCAtMC4yMDU1MTc1LC0wLjc5Nzc5NjYgLTAuNTE4NjAzNSwtMS4wMzcyMDcgeiBtIDMuMDg0MzI2MiwwIGMgMC4xNDEyNjY3LDAuMjA5MTAyNCAwLjIxODM1OTQsMC40NjU2MjA2IDAuMjE4MzU5NCwwLjczNjk2MjkgMCwwLjcyMzU3OTMgLTAuNTg2NTc3LDEuMzEwMTU2MyAtMS4zMTAxNTYzLDEuMzEwMTU2MyAtMC4yNzEzNDIzLDAgLTAuNTI3ODYwNSwtMC4wNzcwOTMgLTAuNzM2OTYyOSwtMC4yMTgzNTk0IDAuMjM5NDEwNCwwLjMxMzA4NTkgMC42MTI2MzYyLDAuNTE4NjAzNSAxLjAzNzIwNywwLjUxODYwMzUgMC43MjM1NzkzLDAgMS4zMTAxNTYzLC0wLjU4NjU3NyAxLjMxMDE1NjMsLTEuMzEwMTU2MyAwLC0wLjQyNDU3MDggLTAuMjA1NTE3NiwtMC43OTc3OTY2IC0wLjUxODYwMzUsLTEuMDM3MjA3IHoiIC8+ICA8L2c+PC9zdmc+);background-repeat:no-repeat;background-position:100% 100%;pointer-events:auto!important}.os-host-rtl > .os-scrollbar-corner.os-scrollbar-corner-resize{-webkit-transform:scale(-1,1);transform:scale(-1,1)}.os-host-overflow{overflow:hidden!important}@-webkit-keyframes hs-resize-observer-dummy-animation{from{z-index:0}to{z-index:-1}}@keyframes hs-resize-observer-dummy-animation{from{z-index:0}to{z-index:-1}}.os-theme-none > .os-scrollbar-horizontal,.os-theme-none > .os-scrollbar-vertical,.os-theme-none > .os-scrollbar-corner{display:none!important}.os-theme-none > .os-scrollbar-corner-resize{display:block!important;min-width:10px;min-height:10px}.os-theme-dark > .os-scrollbar-horizontal,.os-theme-light > .os-scrollbar-horizontal{right:10px;height:10px}.os-theme-dark > .os-scrollbar-vertical,.os-theme-light > .os-scrollbar-vertical{bottom:10px;width:10px}.os-theme-dark.os-host-rtl > .os-scrollbar-horizontal,.os-theme-light.os-host-rtl > .os-scrollbar-horizontal{left:10px;right:0}.os-theme-dark > .os-scrollbar-corner,.os-theme-light > .os-scrollbar-corner{height:10px;width:10px;background-color:transparent}.os-theme-dark > .os-scrollbar,.os-theme-light > .os-scrollbar{padding:2px;box-sizing:border-box;background:transparent}.os-theme-dark > .os-scrollbar.os-scrollbar-unusable,.os-theme-light > .os-scrollbar.os-scrollbar-unusable{background:transparent}.os-theme-dark > .os-scrollbar > .os-scrollbar-track,.os-theme-light > .os-scrollbar > .os-scrollbar-track{background:transparent}.os-theme-dark > .os-scrollbar-horizontal > .os-scrollbar-track > .os-scrollbar-handle,.os-theme-light > .os-scrollbar-horizontal > .os-scrollbar-track > .os-scrollbar-handle{min-width:30px}.os-theme-dark > .os-scrollbar-vertical > .os-scrollbar-track > .os-scrollbar-handle,.os-theme-light > .os-scrollbar-vertical > .os-scrollbar-track > .os-scrollbar-handle{min-height:30px}.os-theme-dark.os-host-transition > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle,.os-theme-light.os-host-transition > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle{-webkit-transition:background-color .3s;transition:background-color .3s}.os-theme-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle,.os-theme-light > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle,.os-theme-dark > .os-scrollbar > .os-scrollbar-track,.os-theme-light > .os-scrollbar > .os-scrollbar-track{border-radius:10px}.os-theme-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle{background:rgba(0,0,0,0.4)}.os-theme-light > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle{background:rgba(255,255,255,0.4)}.os-theme-dark > .os-scrollbar:hover > .os-scrollbar-track > .os-scrollbar-handle{background:rgba(0,0,0,.55)}.os-theme-light > .os-scrollbar:hover > .os-scrollbar-track > .os-scrollbar-handle{background:rgba(255,255,255,.55)}.os-theme-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle.active{background:rgba(0,0,0,.7)}.os-theme-light > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle.active{background:rgba(255,255,255,.7)}.os-theme-dark > .os-scrollbar-horizontal .os-scrollbar-handle:before,.os-theme-dark > .os-scrollbar-vertical .os-scrollbar-handle:before,.os-theme-light > .os-scrollbar-horizontal .os-scrollbar-handle:before,.os-theme-light > .os-scrollbar-vertical .os-scrollbar-handle:before{content:'';position:absolute;left:0;right:0;top:0;bottom:0;display:block}.os-theme-dark.os-host-scrollbar-horizontal-hidden > .os-scrollbar-horizontal .os-scrollbar-handle:before,.os-theme-dark.os-host-scrollbar-vertical-hidden > .os-scrollbar-vertical .os-scrollbar-handle:before,.os-theme-light.os-host-scrollbar-horizontal-hidden > .os-scrollbar-horizontal .os-scrollbar-handle:before,.os-theme-light.os-host-scrollbar-vertical-hidden > .os-scrollbar-vertical .os-scrollbar-handle:before{display:none}.os-theme-dark > .os-scrollbar-horizontal .os-scrollbar-handle:before,.os-theme-light > .os-scrollbar-horizontal .os-scrollbar-handle:before{top:-6px;bottom:-2px}.os-theme-dark > .os-scrollbar-vertical .os-scrollbar-handle:before,.os-theme-light > .os-scrollbar-vertical .os-scrollbar-handle:before{left:-6px;right:-2px}.os-host-rtl.os-theme-dark > .os-scrollbar-vertical .os-scrollbar-handle:before,.os-host-rtl.os-theme-light > .os-scrollbar-vertical .os-scrollbar-handle:before{right:-6px;left:-2px}</style><style type="text/css">/* Slider */
+.slick-slider
+{
+    position: relative;
+
+    display: block;
+    box-sizing: border-box;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list
+{
+    position: relative;
+
+    display: block;
+    overflow: hidden;
+
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus
+{
+    outline: none;
+}
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+.slick-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.slick-track:before,
+.slick-track:after
+{
+    display: table;
+
+    content: '';
+}
+.slick-track:after
+{
+    clear: both;
+}
+.slick-loading .slick-track
+{
+    visibility: hidden;
+}
+
+.slick-slide
+{
+    display: none;
+    float: left;
+
+    height: 100%;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.slick-slide img
+{
+    display: block;
+}
+.slick-slide.slick-loading img
+{
+    display: none;
+}
+.slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+    display: block;
+
+    height: auto;
+
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+</style><style type="text/css">@charset 'UTF-8';
+/* Slider */
+.slick-loading .slick-list
+{
+    background: #fff url('https://static.coke.com/assets/nextgen/ajax-loader.gif') center center no-repeat;
+}
+
+/* Icons */
+@font-face
+{
+    font-family: 'slick';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('https://static.coke.com/fonts/nextgen/slick.eot');
+    src: url('https://static.coke.com/fonts/nextgen/slick.eot?#iefix') format('embedded-opentype'), url('https://static.coke.com/fonts/nextgen/slick.woff') format('woff'), url('https://static.coke.com/fonts/nextgen/slick.ttf') format('truetype'), url('https://static.coke.com/fonts/nextgen/slick.svg#slick') format('svg');
+}
+/* Arrows */
+.slick-prev,
+.slick-next
+{
+    font-size: 0;
+    line-height: 0;
+
+    position: absolute;
+    top: 50%;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+
+    cursor: pointer;
+
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus
+{
+    color: transparent;
+    outline: none;
+    background: transparent;
+}
+.slick-prev:hover:before,
+.slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before
+{
+    opacity: 1;
+}
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before
+{
+    opacity: .25;
+}
+
+.slick-prev:before,
+.slick-next:before
+{
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 1;
+
+    opacity: .75;
+    color: white;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-prev
+{
+    left: -25px;
+}
+[dir='rtl'] .slick-prev
+{
+    right: -25px;
+    left: auto;
+}
+.slick-prev:before
+{
+    content: 'â†';
+}
+[dir='rtl'] .slick-prev:before
+{
+    content: 'â†’';
+}
+
+.slick-next
+{
+    right: -25px;
+}
+[dir='rtl'] .slick-next
+{
+    right: auto;
+    left: -25px;
+}
+.slick-next:before
+{
+    content: 'â†’';
+}
+[dir='rtl'] .slick-next:before
+{
+    content: 'â†';
+}
+
+/* Dots */
+.slick-dotted.slick-slider
+{
+    margin-bottom: 30px;
+}
+
+.slick-dots
+{
+    position: absolute;
+    bottom: -25px;
+
+    display: block;
+
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+
+    text-align: center;
+}
+.slick-dots li
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0;
+
+    cursor: pointer;
+}
+.slick-dots li button
+{
+    font-size: 0;
+    line-height: 0;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+
+    cursor: pointer;
+
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+.slick-dots li button:hover,
+.slick-dots li button:focus
+{
+    outline: none;
+}
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before
+{
+    opacity: 1;
+}
+.slick-dots li button:before
+{
+    font-family: 'slick';
+    font-size: 6px;
+    line-height: 20px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 20px;
+    height: 20px;
+
+    content: 'â€¢';
+    text-align: center;
+
+    opacity: .25;
+    color: black;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.slick-dots li.slick-active button:before
+{
+    opacity: .75;
+    color: black;
+}</style><link class="page-theme" rel="stylesheet" href="./Homepage_files/journey.css" type="text/css">
+
+	<link rel="stylesheet" href="./Homepage_files/lau6tfn.css">
+	
+		
+	
+    <title>Homepage </title>
+    
+    
+    
+    
+    
+
+
+
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app" src="./Homepage_files/app.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/main" src="./Homepage_files/main.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jqueryNoConflict" src="./Homepage_files/jquery-no-conflict.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jqueryInternal" src="./Homepage_files/jquery-3.5.1.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="tccc-search" src="./Homepage_files/tccc-search.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="dataLayerHandler" src="./Homepage_files/tccc-dataLayer.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://shared.coke.com/etc.clientlibs/nextgen/clientlibs/ng-base/app/lib/jquery.overlayScrollbars.min.js" src="./Homepage_files/jquery.overlayScrollbars.min.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="AWS" src="./Homepage_files/aws-sdk-2.187.0.min.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="//www.instagram.com/embed.js" src="./Homepage_files/embed.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://platform.twitter.com/widgets.js" src="./Homepage_files/widgets.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="slickSlider" src="./Homepage_files/slick.min.js.download"></script></head>
+
+<body class="page basicpage tccc-page publishMode " data-pricespider="false" data-awsendpoint="https://3adnjyji1d.execute-api.us-east-1.amazonaws.com/prod01-journey/" data-awsregion="us-east-1" data-awsversion="2013-01-01" data-language="en" data-country="in" data-locale="en-in" data-site="tccc-in-en" data-date-format="dd/MM/yyyy" data-shared-root="https://shared.coke.com" data-static-root="https://static.coke.com" data-dbversions-enabled="false" data-extensionless="true" data-cdsconfig-cdsimplementation="global_cds" data-cdsconfig-cdsconfigprofile="/js/one/emea_cds_sdk-1.0.0.min" data-datalayer-elements="[]" data-datalayer-disabled="false" data-genericlocale="en_XB" data-experience="journey" data-additionalrequestheaders="{}" data-instance-id="a3a3812b-43dd-121a-1d95-55f0baa8997f">
+
+    
+        <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WPGDXSV" 
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    
+    
+    
+        
+
+
+
+        
+
+
+
+
+
+
+<a name="top_of_page"></a>
+<div class="root responsivegrid">
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="responsivegrid aem-GridColumn aem-GridColumn--default--12">
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="schemaorg aem-GridColumn aem-GridColumn--default--12">
+    
+
+
+<script type="application/ld+json">
+    {"@context": "http://schema.org", "@graph":[]}
+</script>
+</div>
+<div class="reference parbase aem-GridColumn aem-GridColumn--default--12"><div class="cq-dd-paragraph"><div class="navigation">
+    
+
+
+
+
+
+
+
+
+<!-- Navigation Component -->
+<div class="tccc-cmp tccc-cmp-navigation 
+    " data-component-name="navigation" data-logic-url="https://shared.coke.com/content/dam/journey/components/content/navigation/multi_tier_mobile_flyout/logic.js" data-model="{&quot;linkAddNoFollowTextLink&quot;:&quot;false&quot;,&quot;altText&quot;:&quot;TCC India&quot;,&quot;linkAddNoFollowImageLink&quot;:&quot;false&quot;,&quot;imageLinkTarget&quot;:&quot;_self&quot;,&quot;paddingMarginLeftRightMarginDisable&quot;:&quot;false&quot;,&quot;paddingMarginMobilePadding&quot;:&quot;p-0&quot;,&quot;imageLinkUrl&quot;:&quot;/homepage&quot;,&quot;textLinkTarget&quot;:&quot;_self&quot;,&quot;paddingMarginDeskPadding&quot;:&quot;p-md-0&quot;,&quot;paddingMarginDeskMargin&quot;:&quot;m-md-0&quot;,&quot;mobileMargin&quot;:&quot;m-0&quot;,&quot;navType&quot;:&quot;dynamic&quot;,&quot;imageOrText&quot;:&quot;image&quot;,&quot;logo&quot;:{&quot;src&quot;:&quot;/content/dam/journey/in/en/private/logos/india_headerLogo.svg&quot;,&quot;mobileSrc&quot;:&quot;/content/dam/journey/in/en/private/logos/india_headerLogo.svg&quot;},&quot;bgcolorimageDesktopImage&quot;:{},&quot;bgcolorimageMobileImage&quot;:{},&quot;iconLinkItems&quot;:[{&quot;className&quot;:&quot;search&quot;,&quot;label&quot;:&quot;search&quot;,&quot;linkUrl&quot;:&quot;/search&quot;,&quot;linkTarget&quot;:&quot;_self&quot;,&quot;data&quot;:{&quot;linkAddNoFollow&quot;:&quot;false&quot;}},{&quot;className&quot;:&quot;country&quot;,&quot;label&quot;:&quot;country&quot;,&quot;linkUrl&quot;:&quot;/country-selector&quot;,&quot;linkTarget&quot;:&quot;_self&quot;,&quot;data&quot;:{&quot;linkAddNoFollow&quot;:&quot;false&quot;}}],&quot;navigationModel&quot;:{&quot;depth&quot;:0,&quot;navModelList&quot;:[{&quot;navigationPath&quot;:&quot;/our-company&quot;,&quot;pagetitle&quot;:&quot;Our Company&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:5,&quot;navModelList&quot;:[{&quot;navigationPath&quot;:&quot;/our-company/transparency&quot;,&quot;pagetitle&quot;:&quot;Transparency&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[{&quot;navigationPath&quot;:&quot;/our-company/transparency/stakeholder-engagement&quot;,&quot;pagetitle&quot;:&quot;Stakeholder Engagement&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:7,&quot;navModelList&quot;:[]}]},{&quot;navigationPath&quot;:&quot;/our-company/our-leader&quot;,&quot;pagetitle&quot;:&quot;Our Leaders&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[{&quot;navigationPath&quot;:&quot;/our-company/our-leader/sonali-khanna-vice-president&quot;,&quot;pagetitle&quot;:&quot;Sonali Khanna&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:7,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/our-company/our-leader/padmal-samarapperuma-vice-president&quot;,&quot;pagetitle&quot;:&quot;Padmal Samarapperuma&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:7,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/our-company/our-leader/sundeep-bajoria-vice-president&quot;,&quot;pagetitle&quot;:&quot;Sundeep Bajoria&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:7,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/our-company/our-leader/sanket-ray-president&quot;,&quot;pagetitle&quot;:&quot;Sanket Ray&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:7,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/our-company/our-leader/harsh-bhutani-chief-financial&quot;,&quot;pagetitle&quot;:&quot;Harsh Bhutani&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:7,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/our-company/our-leader/reetima-rakyan-vice-president&quot;,&quot;pagetitle&quot;:&quot;Reetima Rakyan&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:7,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/our-company/our-leader/nishi-kulshreshtha-chaturvedi-vice-president&quot;,&quot;pagetitle&quot;:&quot;Nishi Kulshreshtha Chaturvedi&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:7,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/our-company/our-leader/greishma-singh-vice-president&quot;,&quot;pagetitle&quot;:&quot;Greishma Singh&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:7,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/our-company/our-leader/enrique-ackermann-vice-president&quot;,&quot;pagetitle&quot;:&quot;Enrique Ackermann&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:7,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/our-company/our-leader/devyani-rajya-laxmi-rana-vice-president&quot;,&quot;pagetitle&quot;:&quot;Devyani Rajya Laxmi Rana&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:7,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/our-company/our-leader/arnab-roy-vice-president&quot;,&quot;pagetitle&quot;:&quot;Arnab Roy Vice President&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:7,&quot;navModelList&quot;:[]}]},{&quot;navigationPath&quot;:&quot;/our-company/sustainability-report-2020-21&quot;,&quot;pagetitle&quot;:&quot;Sustainability Report 2020-21&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[{&quot;navigationPath&quot;:&quot;/our-company/sustainability-report-2020-21/message-from-leadership&quot;,&quot;pagetitle&quot;:&quot;Message from Leadership&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:7,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/our-company/sustainability-report-2020-21/our-response-to-pandemic&quot;,&quot;pagetitle&quot;:&quot;Our Response to Pandemic&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:7,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/our-company/sustainability-report-2020-21/world-without--waste&quot;,&quot;pagetitle&quot;:&quot;World Without  Waste&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:7,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/our-company/sustainability-report-2020-21/fruit-circular-economy-&quot;,&quot;pagetitle&quot;:&quot;Fruit Circular Economy &quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:7,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/our-company/sustainability-report-2020-21/water-stewardship-&quot;,&quot;pagetitle&quot;:&quot;Water Stewardship &quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:7,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/our-company/sustainability-report-2020-21/sustainable-choices-&quot;,&quot;pagetitle&quot;:&quot;Sustainable Choices &quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:7,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/our-company/sustainability-report-2020-21/tending-to-people--and-communities&quot;,&quot;pagetitle&quot;:&quot;Tending to people  and Communities&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:7,&quot;navModelList&quot;:[]}]}]},{&quot;navigationPath&quot;:&quot;/brands&quot;,&quot;pagetitle&quot;:&quot;Brands&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:5,&quot;navModelList&quot;:[{&quot;navigationPath&quot;:&quot;/brands/coca-cola&quot;,&quot;pagetitle&quot;:&quot;Coca-Cola&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/brands/thums-up&quot;,&quot;pagetitle&quot;:&quot;Thums Up&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/brands/fanta&quot;,&quot;pagetitle&quot;:&quot;Fanta&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/brands/sprite&quot;,&quot;pagetitle&quot;:&quot;Sprite&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/brands/limca&quot;,&quot;pagetitle&quot;:&quot;Limca&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/brands/kinley&quot;,&quot;pagetitle&quot;:&quot;Kinley&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/brands/smartwater&quot;,&quot;pagetitle&quot;:&quot;Smartwater&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/brands/minute-maid&quot;,&quot;pagetitle&quot;:&quot;Minute Maid&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/brands/maaza&quot;,&quot;pagetitle&quot;:&quot;Maaza&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/brands/georgia&quot;,&quot;pagetitle&quot;:&quot;Georgia&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/brands/costa-coffee&quot;,&quot;pagetitle&quot;:&quot;Costa Coffee&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/brands/rani&quot;,&quot;pagetitle&quot;:&quot;Rani&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/brands/rimzim&quot;,&quot;pagetitle&quot;:&quot;Rimzim&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/brands/understand-the-label-georgia&quot;,&quot;pagetitle&quot;:&quot;Georgia Dispensing Solutions | Georgia Vending Machines | Coca-Cola India&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/brands/hard-working-crew-for-the-right-brew&quot;,&quot;pagetitle&quot;:&quot;Hard Working Crew For the Right Brew&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/brands/get-to-know-the-right-coffee-drink&quot;,&quot;pagetitle&quot;:&quot;Get to Know the Right Coffee Drink&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]}]},{&quot;navigationPath&quot;:&quot;/responsible-business&quot;,&quot;pagetitle&quot;:&quot;Responsible Business&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:5,&quot;navModelList&quot;:[{&quot;navigationPath&quot;:&quot;/responsible-business/sustainability-report&quot;,&quot;pagetitle&quot;:&quot;Sustainability Update&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[{&quot;navigationPath&quot;:&quot;/responsible-business/sustainability-report/message-from-leadership-sanket&quot;,&quot;pagetitle&quot;:&quot;Message from Leadership Sanket&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:7,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/responsible-business/sustainability-report/message-from-leadership-devyani&quot;,&quot;pagetitle&quot;:&quot;Message from Leadership Devyani&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:7,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/responsible-business/sustainability-report/world-without-waste&quot;,&quot;pagetitle&quot;:&quot;World Without Waste&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:7,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/responsible-business/sustainability-report/water-stewardship&quot;,&quot;pagetitle&quot;:&quot;Water Stewardship&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:7,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/responsible-business/sustainability-report/sustainable-agriculture&quot;,&quot;pagetitle&quot;:&quot;Sustainable Agriculture&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:7,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/responsible-business/sustainability-report/our-response-to-covid&quot;,&quot;pagetitle&quot;:&quot;Our response to COVID&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:7,&quot;navModelList&quot;:[]}]},{&quot;navigationPath&quot;:&quot;/responsible-business/water-stewardship&quot;,&quot;pagetitle&quot;:&quot;Water Stewardship&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/responsible-business/world-without-waste&quot;,&quot;pagetitle&quot;:&quot;World Without Waste&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/responsible-business/fruit-circular-economy&quot;,&quot;pagetitle&quot;:&quot;Fruit Circular Economy&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/responsible-business/beverages-for-life&quot;,&quot;pagetitle&quot;:&quot;Beverages For Life&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/responsible-business/value-chain-transformation&quot;,&quot;pagetitle&quot;:&quot;Value Chain Transformation&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]}]},{&quot;navigationPath&quot;:&quot;/media-center&quot;,&quot;pagetitle&quot;:&quot;Media Center&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:5,&quot;navModelList&quot;:[{&quot;navigationPath&quot;:&quot;/media-center/fanta-celebrates-crickets-colorful-fans-at-icc-mens-t20-world-cu&quot;,&quot;pagetitle&quot;:&quot;Fanta Celebrates Cricket’s Colorful Fans at ICC Men’s T20 World Cup&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/media-center/limca-book-of-records-pays-tribute-to-indias-covid-19-warriors&quot;,&quot;pagetitle&quot;:&quot;Limca Book of Records pays tribute to India’s Covid-19 warriors, celebrates 30 years of inspiration!&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;thumbnailImagePath&quot;:&quot;/content/dam/journey/in/en/media-center/limca-book-of-records-pays-tribute-to-indias-covid-19-warriors/Limca Book of Records 2020.jpg&quot;,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/media-center/coca-cola-india-pledges-to-help-stopthespread-positively-impacting-over-10-lakh-lives&quot;,&quot;pagetitle&quot;:&quot;Coca-Cola India pledges to help #StopTheSpread – Positively impacting over 10 lakh lives&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;thumbnailImagePath&quot;:&quot;/content/dam/journey/in/en/media-center/coca-cola-india-pledges-to-help-stopthespread-positively-impacting-over-10-lakh-lives/StopTheSpread_Updated.png&quot;,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/media-center/this-world-water-day-coca-cola-reinvigorates-a-decade-of-water&quot;,&quot;pagetitle&quot;:&quot;This World Water Day, Coca-Cola reinvigorates, a decade of water stewardship in India&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/media-center/coca-cola-india-reinvigorates-its-vision-of-creating-a-world-without-waste-emerging-stronger-this-world-recycling-day&quot;,&quot;pagetitle&quot;:&quot;Coca-Cola India, reinvigorates its vision of creating a ‘World Without Waste’: Emerging Stronger, this World Recycling Day&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;thumbnailImagePath&quot;:&quot;/content/dam/journey/in/en/media-center/coca-cola-india-reinvigorates-its-vision-of-creating-a-world-without-waste-emerging-stronger-this-world-recycling-day/recycling-day.jpg&quot;,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/media-center/coca-cola-india-giz-and-tetra-pak-join-hands-with-saahas-to&quot;,&quot;pagetitle&quot;:&quot;Coca-Cola India, GIZ and Tetra Pak join hands with SAAHAS to launch the second phase of source segregation program, Alag Karo, in Gurugram&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;thumbnailImagePath&quot;:&quot;/content/dam/journey/in/en/media-center/coca-cola-india-giz-and-tetra-pak-join-hands-with-saahas-to/SAAHAS.jpg&quot;,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/media-center/coca-cola-india-initiates-provision-of-safe-drinking-water-in-te&quot;,&quot;pagetitle&quot;:&quot;Coca-Cola India initiates provision of safe drinking water in Telangana \u0026 Andhra Pradesh benefitting 20,000 lives&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;thumbnailImagePath&quot;:&quot;/content/dam/journey/in/en/media-center/coca-cola-india-initiates-provision-of-safe-drinking-water-in-te/Coca-Cola-India-initiates-provision-of-safe-drinking-water-in-Telangana---Andhra-Pradesh.jpg&quot;,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/media-center/coca-cola-invests-in-the-essence-of-india-celebrates-its-farmer&quot;,&quot;pagetitle&quot;:&quot;Coca-Cola brings Delightful Fruit Nutrition from the ‘Farm to Table’&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;thumbnailImagePath&quot;:&quot;/content/dam/journey/in/en/media-center/coca-cola-invests-in-the-essence-of-india-celebrates-its-farmer/-Photo-2--Coca-Cola-India-Brings-Delightful-Fruit-Nutrition-with-two-new-products--Minute-Maid-Nutriforce-and-Minute-Maid-Vita-Punch-made-with-fruits-gro.jpg&quot;,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/media-center/coca-cola-india-partners-with-save-the-children-to-provide-relie&quot;,&quot;pagetitle&quot;:&quot;Coca-Cola India partners with Save the Children to provide relief assistance to Cyclone AMPHAN impacted in West Bengal&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;thumbnailImagePath&quot;:&quot;/content/dam/journey/in/en/media-center/coca-cola-india-partners-with-save-the-children-to-provide-relie/clone-AMPHAN.jpg&quot;,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/media-center/-coca-cola-and-care-india-join-hands-to-provide-immediate-food-s&quot;,&quot;pagetitle&quot;:&quot;Coca-Cola and CARE India Join Hands to Provide Immediate Food Security and Other Essentials to over 1.5 lakh marginalised and vulnerable people amid the COVID-19 Outbreak&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/media-center/the-coca-cola-system-in-india-releases-sustainability-update-202&quot;,&quot;pagetitle&quot;:&quot;The Coca-Cola System in India Releases Sustainability Update 2020-21&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/media-center/kinley-makes-a-come-back-on-screen--launches-campaign--boond-boo&quot;,&quot;pagetitle&quot;:&quot;Kinley makes a come-back on screen, launches campaign ‘Boond Boond Mein Vishwas’ with MS Dhoni&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/media-center/coca-cola-brings-back-their-iconic--thanda--campaign-with-a-fres&quot;,&quot;pagetitle&quot;:&quot;Coca-Cola brings back their iconic ‘Thanda’ campaign with a fresh pair of faces and a new twist&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/media-center/fanta-launches-apple-delite--introduces-kartik-aaryan-as-fanta-s&quot;,&quot;pagetitle&quot;:&quot;Fanta launches Apple Delite; Introduces Kartik Aaryan as Fanta’s brand ambassador&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/media-center/in-a-bold-new-campaign--coca-cola-invites-fans-to-try-the-new-co&quot;,&quot;pagetitle&quot;:&quot;In a bold new campaign, Coca-Cola invites fans to try the new Coca-Cola Zero Sugar&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/media-center/shah-rukh-khan-s-toofani-partnership-with-thums-up-thrills-the-f&quot;,&quot;pagetitle&quot;:&quot;Shah Rukh Khan’s Toofani partnership with Thums Up thrills the fans&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/media-center/coca-cola-india-unveils-coke-tables-campaign-with-diljit-dosan&quot;,&quot;pagetitle&quot;:&quot;Coca-Cola India unveils ‘Coke Tables’ campaign with Diljit Dosanjh in Punjab&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/media-center/maaza-brings-together-amitabh-bachchan-and-pooja-hegde-to-launch&quot;,&quot;pagetitle&quot;:&quot;Maaza brings together Amitabh Bachchan and Pooja Hegde to launch ‘Dildaar Bana De’ campaign&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/media-center/vijay-deverakonda-wows-audiences-with-his-action-packed-stunts-i&quot;,&quot;pagetitle&quot;:&quot;Vijay Deverakonda wows audiences with his action-packed stunts in Thums Up’s new campaign&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/media-center/thums-up-s-latest-campaign--toofan--amplifies-its-strong-taste--&quot;,&quot;pagetitle&quot;:&quot;Thums Up’s latest campaign ‘TOOFAN’ amplifies its strong taste  with Jasprit Bumrah&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/media-center/fanta-launches-apple-delite--introduces-samantha-ruth-prabhu-as-&quot;,&quot;pagetitle&quot;:&quot;Fanta launches Apple Delite; Introduces Samantha Ruth Prabhu as the new face of Fanta&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/media-center/commemorating-world-water-day--coca-cola-inswa-improves-water-us&quot;,&quot;pagetitle&quot;:&quot;Commemorating World Water Day, Coca-Cola INSWA improves Water Use Efficiency by 32.4 percent &quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/media-center/the-coca-cola-foundation-provides-funding-to-saahas-for-sustaina&quot;,&quot;pagetitle&quot;:&quot;The Coca-Cola Foundation provides funding to Saahas for Sustainable Waste Management in Panna, Madhya Pradesh &quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]},{&quot;navigationPath&quot;:&quot;/media-center/sprite-s-new--thand-rakh--campaign-tells-audiences-to--chill---l&quot;,&quot;pagetitle&quot;:&quot;Sprite’s new ‘Thand Rakh’ campaign tells audiences to ‘chill’, literally&quot;,&quot;navigationTitle&quot;:&quot;&quot;,&quot;depth&quot;:6,&quot;navModelList&quot;:[]}]}]}}" data-template-url="https://shared.coke.com/content/dam/journey/components/content/navigation/multi_tier_mobile_flyout/template.hbs" id="JourneyMainNav" data-component-id="JourneyMainNav" data-design-package="/content/dam/journey/components/content/navigation/multi_tier_mobile_flyout" data-allow-nesting="false" data-instance-id="c2fe5229-eb53-7279-16e6-ad475f35cf0c" style="margin-top: 0px;"><div class="mobile-navigation-overlay d-none"></div>
+
+<div class="nav_container" style="top: 0px;">
+	<a class="skip-to-content" href="https://www.coca-colaindia.com/homepage#main">Skip to content</a>
+	<!-- DESKTOP NAV START -->
+	<div class="">
+		<nav class="navbar navbar-expand-md desktopNav" style="">
+
+			<div class="navLine max-width-attop">
+
+				<div class="navLine-links nav-item">
+									</div>
+
+				<!-- branding icon/text -->
+				<a class="navbar-brand" role="img" aria-label="TCC India" href="https://www.coca-colaindia.com/homepage" target="_self"><img src="./Homepage_files/india_headerLogo.svg" alt="TCC India"></a>
+				<!-- branding icon/text -->
+
+			</div>
+
+			<ul class="navbar-nav">
+
+				<li class="nav-item" data-li="our-company">
+					<a href="https://www.coca-colaindia.com/our-company" class="nav-link">
+						<span>Our Company</span>
+					</a>
+				</li>
+				<li class="nav-item" data-li="brands">
+					<a href="https://www.coca-colaindia.com/brands" class="nav-link">
+						<span>Brands</span>
+					</a>
+				</li>
+				<li class="nav-item" data-li="responsible-business">
+					<a href="https://www.coca-colaindia.com/responsible-business" class="nav-link">
+						<span>Responsible Business</span>
+					</a>
+				</li>
+				<li class="nav-item" data-li="media-center">
+					<a href="https://www.coca-colaindia.com/media-center" class="nav-link">
+						<span>Media Center</span>
+					</a>
+				</li>
+				<li class="nav-item navbarRightItems" role="img" aria-label="search">
+					<a href="https://www.coca-colaindia.com/search" target="_self" aria-label="search" class="search"><span>search</span></a>
+				</li>
+				<li class="nav-item navbarRightItems" role="img" aria-label="country">
+					<a href="https://www.coca-colaindia.com/country-selector" target="_self" aria-label="country" class="country"><span>country</span></a>
+				</li>
+
+			</ul>
+
+
+		</nav> <!-- .navbar desktopNav -->
+	</div> <!-- .d-none d-md-block -->
+	<!-- DESKTOP NAV END -->
+
+	<!-- MOBILE NAV START -->
+	<div class="mobileNav">
+		<nav class="navbar fixed-top mobileNavBar">
+
+			<button class="navbar-toggler navMenu" type="button" data-toggle="collapse" data-target=".collapsableNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon" aria-hidden="true"></span>
+			</button>
+
+			<div class="collapse navbar-collapse collapsableNav">
+
+				<ul class="navbar-nav dropdown-menu navLevel1">
+					<li data-li="our-company">
+						<a data-link="/our-company" href="https://www.coca-colaindia.com/homepage#" class="mobileSubMenu dropdown-item has-children ">
+							<span>Our Company</span>
+							<img src="./Homepage_files/ico-arrow-right.svg" class="navigation__ico-arrow" alt="Menu Items">
+						</a>
+					</li>
+					<li data-li="brands">
+						<a data-link="/brands" href="https://www.coca-colaindia.com/homepage#" class="mobileSubMenu dropdown-item has-children ">
+							<span>Brands</span>
+							<img src="./Homepage_files/ico-arrow-right.svg" class="navigation__ico-arrow" alt="Menu Items">
+						</a>
+					</li>
+					<li data-li="responsible-business">
+						<a data-link="/responsible-business" href="https://www.coca-colaindia.com/homepage#" class="mobileSubMenu dropdown-item has-children ">
+							<span>Responsible Business</span>
+							<img src="./Homepage_files/ico-arrow-right.svg" class="navigation__ico-arrow" alt="Menu Items">
+						</a>
+					</li>
+					<li data-li="media-center">
+						<a data-link="/media-center" href="https://www.coca-colaindia.com/homepage#" class="mobileSubMenu dropdown-item has-children ">
+							<span>Media Center</span>
+							<img src="./Homepage_files/ico-arrow-right.svg" class="navigation__ico-arrow" alt="Menu Items">
+						</a>
+					</li>
+
+					<!-- nav links -->
+					<li class="navbarIcons">
+						<a href="https://www.coca-colaindia.com/search" target="_self" aria-label="search" class="search"></a>
+						<a href="https://www.coca-colaindia.com/country-selector" target="_self" aria-label="country" class="country"></a>
+						
+					</li>
+					<!-- nav links -->
+
+
+				</ul> <!-- .navbar-nav dropdown-menu navLevel1 - mobile -->
+
+				<ul class="navbar-nav dropdown-menu navLevel2 d-none"></ul>
+
+			</div> <!-- .collapse  - mobile -->
+
+
+			<a class="navbar-brand" role="img" aria-label="TCC India" href="https://www.coca-colaindia.com/homepage" target="_self">
+				<img src="./Homepage_files/india_headerLogo.svg" class="navigation__mobile-logo" alt="TCC India">
+			</a>
+
+		</nav> <!-- .mobileNavBar -->
+	</div> <!-- .d-block d-md-none mobileNav -->
+	<!-- MOBILE NAV END -->
+</div> <!-- .nav_container -->
+</div>
+</div>
+</div></div>
+<div class="responsivegrid aem-GridColumn aem-GridColumn--default--12">
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="card bottomLeft card__homepage__white-bubbles-left arrow__link-white card__side_indicator_w_1 bubbles__header-scroll match-title-color card__h5--bolder card__homepage__bleed aem-GridColumn aem-GridColumn--default--12">
+    
+
+
+
+
+  
+
+
+
+<!-- Card Vertical -->
+<div class="tccc-cmp tccc-cmp-card drop-shadow 
+  
+  " data-component-name="card" data-logic-url="https://shared.coke.com/content/dam/journey/components/content/card/bleed_background_image/logic.js" data-model="{&quot;linkLabel&quot;:&quot;Learn More&quot;,&quot;headlineText&quot;:&quot;Adding happiness to everyday moments&quot;,&quot;isDecorativeAudio&quot;:&quot;false&quot;,&quot;isDecorativeVideo&quot;:&quot;false&quot;,&quot;linkConstructAddNoFollow&quot;:&quot;false&quot;,&quot;addText&quot;:&quot;Scroll&quot;,&quot;imageOrVideo&quot;:&quot;image&quot;,&quot;showAltText&quot;:&quot;true&quot;,&quot;paddingMarginLeftRightMarginDisable&quot;:&quot;false&quot;,&quot;cardLinkTarget&quot;:&quot;_self&quot;,&quot;paddingMarginMobilePadding&quot;:&quot;p-0&quot;,&quot;linkUrl&quot;:&quot;/brands&quot;,&quot;headlineTextAlignment&quot;:&quot;text-left&quot;,&quot;linkTarget&quot;:&quot;_self&quot;,&quot;paddingMarginDeskPadding&quot;:&quot;p-md-0&quot;,&quot;linkTargetDownload&quot;:&quot;_self&quot;,&quot;linkAddNoFollowAudioUrl&quot;:&quot;false&quot;,&quot;bgcolorimageStyle&quot;:&quot;image&quot;,&quot;linkType&quot;:&quot;pageURL&quot;,&quot;isDecorative&quot;:&quot;false&quot;,&quot;showAltTextAudio&quot;:&quot;false&quot;,&quot;showAltTextVideo&quot;:&quot;true&quot;,&quot;paddingMarginDeskMargin&quot;:&quot;m-md-0&quot;,&quot;mobileMargin&quot;:&quot;m-0&quot;,&quot;headlineTextColor&quot;:&quot;rgba(255,255,255,1.00)&quot;,&quot;bodyText&quot;:&quot;We know that everyone is unique and to meet their needs we offer our range of beverage choices&quot;,&quot;headlineTextSize&quot;:&quot;2&quot;,&quot;linkAddNoFollow&quot;:&quot;false&quot;,&quot;image&quot;:{},&quot;mobile&quot;:{},&quot;icon&quot;:{},&quot;bgcolorimageDesktopImage&quot;:{&quot;src&quot;:&quot;/content/dam/journey/in/en/homepage/adding happiness homepage desktop.jpg&quot;},&quot;bgcolorimageMobileImage&quot;:{&quot;src&quot;:&quot;/content/dam/journey/in/en/homepage/adding happiness to everyday moments mobile.jpg&quot;},&quot;video&quot;:{},&quot;audio&quot;:{}}" data-template-url="https://shared.coke.com/content/dam/journey/components/content/card/bleed_background_image/template.hbs" data-design-package="/content/dam/journey/components/content/card/bleed_background_image" data-server-hbs-enabled="false" data-allow-nesting="false" data-instance-id="d5af1f04-ee6b-0ffb-10b6-73142d059b0f"><div class="responsive-background-image custom-margin-padding custom-min-height 	 m-0
+	 p-0
+	 m-md-0
+	 p-md-0 lazyloaded" data-xs-bg-src="/content/dam/journey/in/en/homepage/adding happiness to everyday moments mobile.jpg" data-md-bg-src="/content/dam/journey/in/en/homepage/adding happiness homepage desktop.jpg" style="background-image: url(&quot;/content/dam/journey/in/en/homepage/adding happiness homepage desktop.jpg&quot;);">
+
+	<div class="card__img--wrapper text-center bubbles__header-scroll">
+
+
+
+				<!-- display mobile and/or desktop image  -->
+  					<div data-md-bg-src="/content/dam/journey/in/en/homepage/adding happiness homepage desktop.jpg" data-xs-bg-src="/content/dam/journey/in/en/homepage/adding happiness to everyday moments mobile.jpg" class="card-img-top card__img--zoom responsive-background-image lazyloaded" style="background-image: url(&quot;/content/dam/journey/in/en/homepage/adding happiness homepage desktop.jpg&quot;);">
+					</div>
+
+			<div class="card__div--overlay card-body-style lazyloaded">
+
+				<div class="card--overlayWrapper">
+						<h5 class="card-title text-left" style="color: rgba(255,255,255,1.00); font-size: 2rem;">
+							Adding happiness to everyday moments
+						</h5>
+
+						<p class="card-bodyText" style="color: rgb(255, 255, 255) !important;">We know that everyone is unique and to meet their needs we offer our range of beverage choices</p>
+
+						
+
+						<a class="card-cta" href="https://www.coca-colaindia.com/brands" target="_self" aria-label="Opens link">
+
+						<button class="btn btn-primary">Learn More</button>
+
+						</a>
+				</div>
+			<p class="card-addText" style="color: rgb(255, 255, 255) !important;">Scroll</p></div>
+
+			<div class="card__side-indicator"></div>
+		
+
+
+
+
+
+	</div>
+</div>
+</div>
+</div>
+<div class="card bottomLeft card__homepage__white-bubbles-left arrow__link-white card__side_indicator_w_2 bubbles__header-scroll match-title-color card__h5--bolder card__homepage__bleed card__content-top__bleed aem-GridColumn aem-GridColumn--default--12">
+    
+
+
+
+
+  
+
+
+
+<!-- Card Vertical -->
+<div class="tccc-cmp tccc-cmp-card rm-scroll drop-shadow 
+  
+  " data-component-name="card" data-logic-url="https://shared.coke.com/content/dam/journey/components/content/card/bleed_background_image/logic.js" data-model="{&quot;linkLabel&quot;:&quot;Learn More&quot;,&quot;headlineText&quot;:&quot;Doing business the right way for a sustainable world&quot;,&quot;isDecorativeAudio&quot;:&quot;false&quot;,&quot;isDecorativeVideo&quot;:&quot;false&quot;,&quot;linkConstructAddNoFollow&quot;:&quot;false&quot;,&quot;addText&quot;:&quot;Scroll&quot;,&quot;imageOrVideo&quot;:&quot;image&quot;,&quot;showAltText&quot;:&quot;true&quot;,&quot;paddingMarginLeftRightMarginDisable&quot;:&quot;false&quot;,&quot;cardLinkTarget&quot;:&quot;_self&quot;,&quot;paddingMarginMobilePadding&quot;:&quot;p-0&quot;,&quot;linkUrl&quot;:&quot;/responsible-business&quot;,&quot;headlineTextAlignment&quot;:&quot;text-left&quot;,&quot;linkTarget&quot;:&quot;_self&quot;,&quot;paddingMarginDeskPadding&quot;:&quot;p-md-0&quot;,&quot;linkTargetDownload&quot;:&quot;_self&quot;,&quot;linkAddNoFollowAudioUrl&quot;:&quot;false&quot;,&quot;bgcolorimageStyle&quot;:&quot;image&quot;,&quot;linkType&quot;:&quot;pageURL&quot;,&quot;isDecorative&quot;:&quot;false&quot;,&quot;showAltTextAudio&quot;:&quot;false&quot;,&quot;showAltTextVideo&quot;:&quot;true&quot;,&quot;paddingMarginDeskMargin&quot;:&quot;m-md-0&quot;,&quot;mobileMargin&quot;:&quot;m-0&quot;,&quot;headlineTextColor&quot;:&quot;rgba(255,255,255,1.00)&quot;,&quot;bodyText&quot;:&quot;We’re  working towards creating sustainable solutions that benefit the emerging needs of the world&quot;,&quot;headlineTextSize&quot;:&quot;1.8&quot;,&quot;linkAddNoFollow&quot;:&quot;false&quot;,&quot;image&quot;:{},&quot;mobile&quot;:{},&quot;icon&quot;:{},&quot;bgcolorimageDesktopImage&quot;:{&quot;src&quot;:&quot;/content/dam/journey/in/en/homepage/homepage sustainability 2.jpg&quot;},&quot;bgcolorimageMobileImage&quot;:{&quot;src&quot;:&quot;/content/dam/journey/in/en/homepage/sustainability mobile homepage.jpg&quot;},&quot;video&quot;:{},&quot;audio&quot;:{}}" data-template-url="https://shared.coke.com/content/dam/journey/components/content/card/bleed_background_image/template.hbs" data-design-package="/content/dam/journey/components/content/card/bleed_background_image" data-server-hbs-enabled="false" data-allow-nesting="false" data-instance-id="94829918-0149-52d6-f099-a75be94fa4b6"><div class="responsive-background-image custom-margin-padding custom-min-height 	 m-0
+	 p-0
+	 m-md-0
+	 p-md-0 lazyloaded" data-xs-bg-src="/content/dam/journey/in/en/homepage/sustainability mobile homepage.jpg" data-md-bg-src="/content/dam/journey/in/en/homepage/homepage sustainability 2.jpg" style="background-image: url(&quot;/content/dam/journey/in/en/homepage/homepage sustainability 2.jpg&quot;);">
+
+	<div class="card__img--wrapper text-center bubbles__header-scroll">
+
+
+
+				<!-- display mobile and/or desktop image  -->
+  					<div data-md-bg-src="/content/dam/journey/in/en/homepage/homepage sustainability 2.jpg" data-xs-bg-src="/content/dam/journey/in/en/homepage/sustainability mobile homepage.jpg" class="card-img-top card__img--zoom responsive-background-image lazyloaded" style="background-image: url(&quot;/content/dam/journey/in/en/homepage/homepage sustainability 2.jpg&quot;);">
+					</div>
+
+			<div class="card__div--overlay card-body-style lazyloaded">
+
+				<div class="card--overlayWrapper">
+						<h5 class="card-title text-left" style="color: rgba(255,255,255,1.00); font-size: 1.8rem;">
+							Doing business the right way for a sustainable world
+						</h5>
+
+						<p class="card-bodyText" style="color: rgb(255, 255, 255) !important;">We’re  working towards creating sustainable solutions that benefit the emerging needs of the world</p>
+
+						
+
+						<a class="card-cta" href="https://www.coca-colaindia.com/responsible-business" target="_self" aria-label="Opens link">
+
+						<button class="btn btn-primary">Learn More</button>
+
+						</a>
+				</div>
+			<p class="card-addText" style="color: rgb(255, 255, 255) !important;">Scroll</p></div>
+
+			<div class="card__side-indicator"></div>
+		
+
+
+
+
+
+	</div>
+</div>
+</div>
+</div>
+<div class="card bottomLeft card__homepage__white-bubbles-left arrow__link-white card__side_indicator_w_3 bubbles__header-scroll match-title-color card__h5--bolder card__homepage__bleed aem-GridColumn aem-GridColumn--default--12">
+    
+
+
+
+
+  
+
+
+
+<!-- Card Vertical -->
+<div class="tccc-cmp tccc-cmp-card rm-scroll drop-shadow 
+  
+  " data-component-name="card" data-logic-url="https://shared.coke.com/content/dam/journey/components/content/card/bleed_background_image/logic.js" data-model="{&quot;linkLabel&quot;:&quot;Learn More&quot;,&quot;headlineText&quot;:&quot;Making every drop count&quot;,&quot;isDecorativeAudio&quot;:&quot;false&quot;,&quot;isDecorativeVideo&quot;:&quot;false&quot;,&quot;linkConstructAddNoFollow&quot;:&quot;false&quot;,&quot;addText&quot;:&quot;Scroll&quot;,&quot;imageOrVideo&quot;:&quot;image&quot;,&quot;showAltText&quot;:&quot;true&quot;,&quot;paddingMarginLeftRightMarginDisable&quot;:&quot;false&quot;,&quot;cardLinkTarget&quot;:&quot;_self&quot;,&quot;paddingMarginMobilePadding&quot;:&quot;p-0&quot;,&quot;linkUrl&quot;:&quot;/responsible-business/water-stewardship&quot;,&quot;headlineTextAlignment&quot;:&quot;text-left&quot;,&quot;linkTarget&quot;:&quot;_self&quot;,&quot;paddingMarginDeskPadding&quot;:&quot;p-md-0&quot;,&quot;linkTargetDownload&quot;:&quot;_self&quot;,&quot;linkAddNoFollowAudioUrl&quot;:&quot;false&quot;,&quot;bgcolorimageStyle&quot;:&quot;image&quot;,&quot;linkType&quot;:&quot;pageURL&quot;,&quot;isDecorative&quot;:&quot;false&quot;,&quot;showAltTextAudio&quot;:&quot;false&quot;,&quot;showAltTextVideo&quot;:&quot;true&quot;,&quot;paddingMarginDeskMargin&quot;:&quot;m-md-0&quot;,&quot;mobileMargin&quot;:&quot;m-0&quot;,&quot;headlineTextColor&quot;:&quot;rgba(255,255,255,1.00)&quot;,&quot;bodyText&quot;:&quot;We’re continuously updating our understanding of water stewardship opportunities to align better with the Sustainable Development Goals.&quot;,&quot;headlineTextSize&quot;:&quot;2.375&quot;,&quot;linkAddNoFollow&quot;:&quot;false&quot;,&quot;image&quot;:{},&quot;mobile&quot;:{},&quot;icon&quot;:{},&quot;bgcolorimageDesktopImage&quot;:{&quot;src&quot;:&quot;/content/dam/journey/in/en/homepage/Water Stewardship - Desktop.jpg&quot;},&quot;bgcolorimageMobileImage&quot;:{&quot;src&quot;:&quot;/content/dam/journey/in/en/homepage/Water Stewardhip - Mobile.jpg&quot;},&quot;video&quot;:{},&quot;audio&quot;:{}}" data-template-url="https://shared.coke.com/content/dam/journey/components/content/card/bleed_background_image/template.hbs" data-design-package="/content/dam/journey/components/content/card/bleed_background_image" data-server-hbs-enabled="false" data-allow-nesting="false" data-instance-id="c5a958cb-c48f-6b71-4974-785599330cb3"><div class="responsive-background-image custom-margin-padding custom-min-height 	 m-0
+	 p-0
+	 m-md-0
+	 p-md-0 lazyloaded" data-xs-bg-src="/content/dam/journey/in/en/homepage/Water Stewardhip - Mobile.jpg" data-md-bg-src="/content/dam/journey/in/en/homepage/Water Stewardship - Desktop.jpg" style="background-image: url(&quot;/content/dam/journey/in/en/homepage/Water Stewardship - Desktop.jpg&quot;);">
+
+	<div class="card__img--wrapper text-center bubbles__header-scroll">
+
+
+
+				<!-- display mobile and/or desktop image  -->
+  					<div data-md-bg-src="/content/dam/journey/in/en/homepage/Water Stewardship - Desktop.jpg" data-xs-bg-src="/content/dam/journey/in/en/homepage/Water Stewardhip - Mobile.jpg" class="card-img-top card__img--zoom responsive-background-image lazyloaded" style="background-image: url(&quot;/content/dam/journey/in/en/homepage/Water Stewardship - Desktop.jpg&quot;);">
+					</div>
+
+			<div class="card__div--overlay card-body-style lazyloaded">
+
+				<div class="card--overlayWrapper">
+						<h5 class="card-title text-left" style="color: rgba(255,255,255,1.00); font-size: 2.375rem;">
+							Making every drop count
+						</h5>
+
+						<p class="card-bodyText" style="color: rgb(255, 255, 255) !important;">We’re continuously updating our understanding of water stewardship opportunities to align better with the Sustainable Development Goals.</p>
+
+						
+
+						<a class="card-cta" href="https://www.coca-colaindia.com/responsible-business/water-stewardship" target="_self" aria-label="Opens link">
+
+						<button class="btn btn-primary">Learn More</button>
+
+						</a>
+				</div>
+			<p class="card-addText" style="color: rgb(255, 255, 255) !important;">Scroll</p></div>
+
+			<div class="card__side-indicator"></div>
+		
+
+
+
+
+
+	</div>
+</div>
+</div>
+</div>
+<div class="card bottomLeft card__homepage__white-bubbles-left arrow__link-white card__side_indicator_w_4 bubbles__header-scroll match-title-color card__h5--bolder card__homepage__bleed aem-GridColumn aem-GridColumn--default--12">
+    
+
+
+
+
+  
+
+
+
+<!-- Card Vertical -->
+<div class="tccc-cmp tccc-cmp-card rm-scroll drop-shadow 
+  
+  " data-component-name="card" data-logic-url="https://shared.coke.com/content/dam/journey/components/content/card/bleed_background_image/logic.js" data-model="{&quot;linkLabel&quot;:&quot;Learn More&quot;,&quot;headlineText&quot;:&quot;On a mission to a World Without Waste&quot;,&quot;isDecorativeAudio&quot;:&quot;false&quot;,&quot;isDecorativeVideo&quot;:&quot;false&quot;,&quot;linkConstructAddNoFollow&quot;:&quot;false&quot;,&quot;addText&quot;:&quot;Scroll&quot;,&quot;imageOrVideo&quot;:&quot;image&quot;,&quot;showAltText&quot;:&quot;true&quot;,&quot;paddingMarginLeftRightMarginDisable&quot;:&quot;false&quot;,&quot;cardLinkTarget&quot;:&quot;_self&quot;,&quot;paddingMarginMobilePadding&quot;:&quot;p-0&quot;,&quot;linkUrl&quot;:&quot;/responsible-business/world-without-waste&quot;,&quot;headlineTextAlignment&quot;:&quot;text-left&quot;,&quot;linkTarget&quot;:&quot;_self&quot;,&quot;paddingMarginDeskPadding&quot;:&quot;p-md-0&quot;,&quot;linkTargetDownload&quot;:&quot;_self&quot;,&quot;linkAddNoFollowAudioUrl&quot;:&quot;false&quot;,&quot;bgcolorimageStyle&quot;:&quot;image&quot;,&quot;linkType&quot;:&quot;pageURL&quot;,&quot;isDecorative&quot;:&quot;false&quot;,&quot;showAltTextAudio&quot;:&quot;false&quot;,&quot;showAltTextVideo&quot;:&quot;true&quot;,&quot;paddingMarginDeskMargin&quot;:&quot;m-md-0&quot;,&quot;mobileMargin&quot;:&quot;m-0&quot;,&quot;headlineTextColor&quot;:&quot;rgba(255,255,255,1.00)&quot;,&quot;bodyText&quot;:&quot;We aim to collect back packaging for recycling equivalent to what we put out in the market by 2030.&quot;,&quot;headlineTextSize&quot;:&quot;2&quot;,&quot;linkAddNoFollow&quot;:&quot;false&quot;,&quot;image&quot;:{},&quot;mobile&quot;:{},&quot;icon&quot;:{},&quot;bgcolorimageDesktopImage&quot;:{&quot;src&quot;:&quot;/content/dam/journey/in/en/homepage/world without waste .jpg&quot;},&quot;bgcolorimageMobileImage&quot;:{&quot;src&quot;:&quot;/content/dam/journey/in/en/homepage/world without waste mobile.jpg&quot;},&quot;video&quot;:{},&quot;audio&quot;:{}}" data-template-url="https://shared.coke.com/content/dam/journey/components/content/card/bleed_background_image/template.hbs" data-design-package="/content/dam/journey/components/content/card/bleed_background_image" data-server-hbs-enabled="false" data-allow-nesting="false" data-instance-id="76135a80-68a8-16c3-f228-ec4bc6c73934"><div class="responsive-background-image custom-margin-padding custom-min-height lazyload
+	 m-0
+	 p-0
+	 m-md-0
+	 p-md-0" data-xs-bg-src="/content/dam/journey/in/en/homepage/world without waste mobile.jpg" data-md-bg-src="/content/dam/journey/in/en/homepage/world without waste .jpg" style="background-image: url(&quot;/content/dam/journey/in/en/homepage/world without waste .jpg&quot;);">
+
+	<div class="card__img--wrapper text-center bubbles__header-scroll">
+
+
+
+				<!-- display mobile and/or desktop image  -->
+  					<div data-md-bg-src="/content/dam/journey/in/en/homepage/world without waste .jpg" data-xs-bg-src="/content/dam/journey/in/en/homepage/world without waste mobile.jpg" class="card-img-top card__img--zoom responsive-background-image lazyload" style="background-image: url(&quot;/content/dam/journey/in/en/homepage/world without waste .jpg&quot;);">
+					</div>
+
+			<div class="card__div--overlay card-body-style lazyload">
+
+				<div class="card--overlayWrapper">
+						<h5 class="card-title text-left" style="color: rgba(255,255,255,1.00); font-size: 2rem;">
+							On a mission to a World Without Waste
+						</h5>
+
+						<p class="card-bodyText" style="color: rgb(255, 255, 255) !important;">We aim to collect back packaging for recycling equivalent to what we put out in the market by 2030.</p>
+
+						
+
+						<a class="card-cta" href="https://www.coca-colaindia.com/responsible-business/world-without-waste" target="_self" aria-label="Opens link">
+
+						<button class="btn btn-primary">Learn More</button>
+
+						</a>
+				</div>
+			<p class="card-addText" style="color: rgb(255, 255, 255) !important;">Scroll</p></div>
+
+			<div class="card__side-indicator"></div>
+		
+
+
+
+
+
+	</div>
+</div>
+</div>
+</div>
+<div class="card bottomRight card__homepage__white-bubbles-left arrow__link-white card__side_indicator_w_5 bubbles__header-scroll match-title-color card__h5--bolder card__homepage__bleed aem-GridColumn aem-GridColumn--default--12">
+    
+
+
+
+
+  
+
+
+
+<!-- Card Vertical -->
+<div class="tccc-cmp tccc-cmp-card rm-scroll drop-shadow 
+  
+  " data-component-name="card" data-logic-url="https://shared.coke.com/content/dam/journey/components/content/card/bleed_background_image/logic.js" data-model="{&quot;linkLabel&quot;:&quot;Learn More&quot;,&quot;headlineText&quot;:&quot;Promoting Sustainable Agriculture&quot;,&quot;isDecorativeAudio&quot;:&quot;false&quot;,&quot;isDecorativeVideo&quot;:&quot;false&quot;,&quot;linkConstructAddNoFollow&quot;:&quot;false&quot;,&quot;addText&quot;:&quot;Scroll&quot;,&quot;imageOrVideo&quot;:&quot;image&quot;,&quot;showAltText&quot;:&quot;true&quot;,&quot;paddingMarginLeftRightMarginDisable&quot;:&quot;false&quot;,&quot;cardLinkTarget&quot;:&quot;_self&quot;,&quot;paddingMarginMobilePadding&quot;:&quot;p-0&quot;,&quot;linkUrl&quot;:&quot;/responsible-business/fruit-circular-economy&quot;,&quot;headlineTextAlignment&quot;:&quot;text-left&quot;,&quot;linkTarget&quot;:&quot;_self&quot;,&quot;paddingMarginDeskPadding&quot;:&quot;p-md-0&quot;,&quot;linkTargetDownload&quot;:&quot;_self&quot;,&quot;linkAddNoFollowAudioUrl&quot;:&quot;false&quot;,&quot;bgcolorimageStyle&quot;:&quot;image&quot;,&quot;linkType&quot;:&quot;pageURL&quot;,&quot;isDecorative&quot;:&quot;false&quot;,&quot;showAltTextAudio&quot;:&quot;false&quot;,&quot;showAltTextVideo&quot;:&quot;true&quot;,&quot;paddingMarginDeskMargin&quot;:&quot;m-md-0&quot;,&quot;mobileMargin&quot;:&quot;m-0&quot;,&quot;headlineTextColor&quot;:&quot;rgba(255,255,255,1.00)&quot;,&quot;bodyText&quot;:&quot;\&quot;Our efforts are focused on improving the overall fruit availability, increasing farming efficiency as well as building food processing capacity in the country, thereby helping farmers increase their income\&quot;&quot;,&quot;headlineTextSize&quot;:&quot;2.375&quot;,&quot;linkAddNoFollow&quot;:&quot;false&quot;,&quot;image&quot;:{},&quot;mobile&quot;:{},&quot;icon&quot;:{},&quot;bgcolorimageDesktopImage&quot;:{&quot;src&quot;:&quot;/content/dam/journey/in/en/homepage/1f1e4806-6a73-40ba-9234-ea63a40b1224.jpg&quot;},&quot;bgcolorimageMobileImage&quot;:{&quot;src&quot;:&quot;/content/dam/journey/in/en/homepage/journey-mobile-banner-3-767x1360.jpg&quot;},&quot;video&quot;:{},&quot;audio&quot;:{}}" data-template-url="https://shared.coke.com/content/dam/journey/components/content/card/bleed_background_image/template.hbs" data-design-package="/content/dam/journey/components/content/card/bleed_background_image" data-server-hbs-enabled="false" data-allow-nesting="false" data-instance-id="1dcaf30d-57fc-ae67-6c01-f7f2fc39e616"><div class="responsive-background-image custom-margin-padding custom-min-height lazyload
+	 m-0
+	 p-0
+	 m-md-0
+	 p-md-0" data-xs-bg-src="/content/dam/journey/in/en/homepage/journey-mobile-banner-3-767x1360.jpg" data-md-bg-src="/content/dam/journey/in/en/homepage/1f1e4806-6a73-40ba-9234-ea63a40b1224.jpg" style="background-image: url(&quot;/content/dam/journey/in/en/homepage/1f1e4806-6a73-40ba-9234-ea63a40b1224.jpg&quot;);">
+
+	<div class="card__img--wrapper text-center bubbles__header-scroll">
+
+
+
+				<!-- display mobile and/or desktop image  -->
+  					<div data-md-bg-src="/content/dam/journey/in/en/homepage/1f1e4806-6a73-40ba-9234-ea63a40b1224.jpg" data-xs-bg-src="/content/dam/journey/in/en/homepage/journey-mobile-banner-3-767x1360.jpg" class="card-img-top card__img--zoom responsive-background-image lazyload" style="background-image: url(&quot;/content/dam/journey/in/en/homepage/1f1e4806-6a73-40ba-9234-ea63a40b1224.jpg&quot;);">
+					</div>
+
+			<div class="card__div--overlay card-body-style lazyload">
+
+				<div class="card--overlayWrapper">
+						<h5 class="card-title text-left" style="color: rgba(255,255,255,1.00); font-size: 2.375rem;">
+							Promoting Sustainable Agriculture
+						</h5>
+
+						<p class="card-bodyText" style="color: rgb(255, 255, 255) !important;">"Our efforts are focused on improving the overall fruit availability, increasing farming efficiency as well as building food processing capacity in the country, thereby helping farmers increase their income"</p>
+
+						
+
+						<a class="card-cta" href="https://www.coca-colaindia.com/responsible-business/fruit-circular-economy" target="_self" aria-label="Opens link">
+
+						<button class="btn btn-primary">Learn More</button>
+
+						</a>
+				</div>
+			<p class="card-addText" style="color: rgb(255, 255, 255) !important;">Scroll</p></div>
+
+			<div class="card__side-indicator"></div>
+		
+
+
+
+
+
+	</div>
+</div>
+</div>
+</div>
+<div class="card middleLeft card__homepage__white-bubbles-left arrow__link-white card__side_indicator_w_6 bubbles__header-scroll match-title-color card__h5--bolder card__homepage__bleed card__content-top__bleed aem-GridColumn aem-GridColumn--default--12">
+    
+
+
+
+
+  
+
+
+
+<!-- Card Vertical -->
+<div class="tccc-cmp tccc-cmp-card drop-shadow 
+  
+  " data-component-name="card" data-logic-url="https://shared.coke.com/content/dam/journey/components/content/card/bleed_background_image/logic.js" data-model="{&quot;linkLabel&quot;:&quot;Learn More&quot;,&quot;headlineText&quot;:&quot;\&quot;Presenting the “Super 30” glorious years of Limca Book of Records!\&quot;&quot;,&quot;isDecorativeAudio&quot;:&quot;false&quot;,&quot;isDecorativeVideo&quot;:&quot;false&quot;,&quot;linkConstructAddNoFollow&quot;:&quot;false&quot;,&quot;imageOrVideo&quot;:&quot;image&quot;,&quot;showAltText&quot;:&quot;true&quot;,&quot;paddingMarginLeftRightMarginDisable&quot;:&quot;false&quot;,&quot;cardLinkTarget&quot;:&quot;_self&quot;,&quot;paddingMarginMobilePadding&quot;:&quot;p-0&quot;,&quot;linkUrl&quot;:&quot;/limca-book-of-records&quot;,&quot;headlineTextAlignment&quot;:&quot;text-left&quot;,&quot;linkTarget&quot;:&quot;_self&quot;,&quot;paddingMarginDeskPadding&quot;:&quot;p-md-0&quot;,&quot;linkTargetDownload&quot;:&quot;_self&quot;,&quot;linkAddNoFollowAudioUrl&quot;:&quot;false&quot;,&quot;bgcolorimageStyle&quot;:&quot;image&quot;,&quot;linkType&quot;:&quot;pageURL&quot;,&quot;isDecorative&quot;:&quot;false&quot;,&quot;showAltTextAudio&quot;:&quot;false&quot;,&quot;showAltTextVideo&quot;:&quot;true&quot;,&quot;paddingMarginDeskMargin&quot;:&quot;m-md-0&quot;,&quot;mobileMargin&quot;:&quot;m-0&quot;,&quot;headlineTextColor&quot;:&quot;rgba(255,255,255,1.00)&quot;,&quot;bodyText&quot;:&quot;\&quot;This year’s Limca Book of Records is a combined edition of two challenging years and celebrates stellar victories and accomplishments in human endeavor, education, adventure, business, cinema, the natural world, literature, and the arts.\&quot;&quot;,&quot;headlineTextSize&quot;:&quot;1.8&quot;,&quot;linkAddNoFollow&quot;:&quot;false&quot;,&quot;image&quot;:{},&quot;mobile&quot;:{},&quot;icon&quot;:{},&quot;bgcolorimageDesktopImage&quot;:{&quot;src&quot;:&quot;/content/dam/journey/in/en/homepage/journey-desktop-banner-4-1440x650.jpg&quot;},&quot;bgcolorimageMobileImage&quot;:{&quot;src&quot;:&quot;/content/dam/journey/in/en/homepage/journey-mobile-banner-4-767x1360.jpg&quot;},&quot;video&quot;:{},&quot;audio&quot;:{}}" data-template-url="https://shared.coke.com/content/dam/journey/components/content/card/bleed_background_image/template.hbs" data-design-package="/content/dam/journey/components/content/card/bleed_background_image" data-server-hbs-enabled="false" data-allow-nesting="false" data-instance-id="e84ebc77-910e-c61a-3cee-a52132181d95"><div class="responsive-background-image custom-margin-padding custom-min-height lazyload
+	 m-0
+	 p-0
+	 m-md-0
+	 p-md-0" data-xs-bg-src="/content/dam/journey/in/en/homepage/journey-mobile-banner-4-767x1360.jpg" data-md-bg-src="/content/dam/journey/in/en/homepage/journey-desktop-banner-4-1440x650.jpg" style="background-image: url(&quot;/content/dam/journey/in/en/homepage/journey-desktop-banner-4-1440x650.jpg&quot;);">
+
+	<div class="card__img--wrapper text-center bubbles__header-scroll">
+
+
+
+				<!-- display mobile and/or desktop image  -->
+  					<div data-md-bg-src="/content/dam/journey/in/en/homepage/journey-desktop-banner-4-1440x650.jpg" data-xs-bg-src="/content/dam/journey/in/en/homepage/journey-mobile-banner-4-767x1360.jpg" class="card-img-top card__img--zoom responsive-background-image lazyload" style="background-image: url(&quot;/content/dam/journey/in/en/homepage/journey-desktop-banner-4-1440x650.jpg&quot;);">
+					</div>
+
+			<div class="card__div--overlay card-body-style lazyload">
+
+				<div class="card--overlayWrapper">
+						<h5 class="card-title text-left" style="color: rgba(255,255,255,1.00); font-size: 1.8rem;">
+							"Presenting the “Super 30” glorious years of Limca Book of Records!"
+						</h5>
+
+						<p class="card-bodyText" style="color: rgb(255, 255, 255) !important;">"This year’s&nbsp;Limca Book of Records&nbsp;is a combined edition of two challenging years and celebrates stellar victories and accomplishments in human endeavor, education, adventure, business, cinema, the natural world, literature, and the arts."</p>
+
+
+						<a class="card-cta" href="https://www.coca-colaindia.com/limca-book-of-records" target="_self" aria-label="Opens link">
+
+						<button class="btn btn-primary">Learn More</button>
+
+						</a>
+				</div>
+			</div>
+
+			<div class="card__side-indicator"></div>
+		
+
+
+
+
+
+	</div>
+</div>
+</div>
+</div>
+<div class="button back_to_top mb-2 homepage-back_to_top aem-GridColumn--offset--default--11 aem-GridColumn--default--none aem-GridColumn aem-GridColumn--default--1">
+    
+
+<span class="tccc-cmp tccc-cmp-button " data-component-name="button" data-model="{&quot;linkConstructAddNoFollow&quot;:&quot;false&quot;,&quot;altText&quot;:&quot;Back to top&quot;,&quot;label&quot;:&quot;Top&quot;,&quot;linkAnchor&quot;:&quot;#top_of_page&quot;,&quot;linkTarget&quot;:&quot;_self&quot;,&quot;linkTargetDownload&quot;:&quot;_self&quot;,&quot;linkType&quot;:&quot;pageURL&quot;,&quot;image&quot;:{}}" data-template-url="https://shared.coke.com/content/dam/nextgen/components/content/button/default/template.hbs" data-style-url="https://shared.coke.com/content/dam/nextgen/components/content/button/default/style.css" data-design-package="default" data-server-hbs-enabled="false" data-allow-nesting="false" data-instance-id="1b201ed7-f53b-f4a3-c832-e3735824ad27">  <a href="https://www.coca-colaindia.com/homepage#top_of_page" target="_self" aria-label="Top">
+
+<button class="btn" role="button" data-object-id="" data-event-value="" data-region="">
+    <span>Top</span>
+</button>
+
+  </a>
+</span>
+</div>
+
+    
+</div>
+</div>
+<div class="reference parbase aem-GridColumn aem-GridColumn--default--12"><div class="cq-dd-paragraph"><div class="footer">
+    
+
+
+
+
+
+
+
+
+<div class="tccc-cmp tccc-cmp-footer global__footer
+    " data-template-url="https://shared.coke.com/content/dam/nextgen/components/content/footer/links_before_header/template.hbs" data-style-url="https://shared.coke.com/content/dam/nextgen/components/content/footer/links_before_header/style.css" data-logic-url="https://shared.coke.com/content/dam/nextgen/components/content/footer/links_before_header/logic.js" data-model="{&quot;imageTxt&quot;:&quot;image&quot;,&quot;paddingMarginLeftRightMarginDisable&quot;:&quot;false&quot;,&quot;paddingMarginMobilePadding&quot;:&quot;p-0&quot;,&quot;paddingMarginDeskPadding&quot;:&quot;p-md-0&quot;,&quot;rteText&quot;:&quot;\u003cp\u003e\u003cb\u003eCopyright 2019 The Coca-Cola Company. All Rights Reserved.\u003c/b\u003e \u003c/p\u003e\r\n\u003cp\u003eThe Coca-Cola system in India is comprised of Coca-Cola India Pvt. Ltd. (CCIPL), the concentrate manufacturing entity and 15 authorised bottlers of The Coca-Cola Company (TCCC), which are responsible for the production of ready-to-drink, non-alcoholic beverages under the Trademarks of TCCC, their distribution and sale in the territory of India. The system also comprises the India branch office of Coca-Cola India Inc., which provides guidance in relation to development of business in India.\u003c/p\u003e\r\n&quot;,&quot;paddingMarginDeskMargin&quot;:&quot;m-md-0&quot;,&quot;mobileMargin&quot;:&quot;m-0&quot;,&quot;logo&quot;:{&quot;altText&quot;:&quot;TCC India Footer&quot;,&quot;src&quot;:&quot;/content/dam/journey/in/en/private/logos/india_footerLogo.png&quot;,&quot;link&quot;:&quot;/homepage&quot;},&quot;linkListItems&quot;:[{&quot;data&quot;:{&quot;altText&quot;:&quot;Facebook&quot;,&quot;linkAddNoFollowImageLink&quot;:&quot;false&quot;,&quot;src&quot;:&quot;/content/dam/journey/in/en/private/logos/facebook_circle.svg&quot;,&quot;linkUrl&quot;:&quot;https://www.facebook.com/cocacolaindia&quot;,&quot;linkAddNoFollow&quot;:&quot;false&quot;}},{&quot;data&quot;:{&quot;altText&quot;:&quot;Twitter&quot;,&quot;linkAddNoFollowImageLink&quot;:&quot;false&quot;,&quot;src&quot;:&quot;/content/dam/journey/in/en/private/logos/twitter_circle.svg&quot;,&quot;linkUrl&quot;:&quot;https://twitter.com/CocaCola&quot;,&quot;linkAddNoFollow&quot;:&quot;false&quot;}},{&quot;data&quot;:{&quot;altText&quot;:&quot;Youtube&quot;,&quot;linkAddNoFollowImageLink&quot;:&quot;false&quot;,&quot;src&quot;:&quot;/content/dam/journey/in/en/private/logos/youtube_circle.svg&quot;,&quot;linkUrl&quot;:&quot;https://www.youtube.com/user/cocacola&quot;,&quot;linkAddNoFollow&quot;:&quot;false&quot;}},{&quot;data&quot;:{&quot;altText&quot;:&quot;Flikr&quot;,&quot;linkAddNoFollowImageLink&quot;:&quot;false&quot;,&quot;src&quot;:&quot;/content/dam/journey/in/en/private/logos/flickr_circle.svg&quot;,&quot;linkUrl&quot;:&quot;https://www.flickr.com/photos/coca-cola/&quot;,&quot;linkAddNoFollow&quot;:&quot;false&quot;}},{&quot;data&quot;:{&quot;altText&quot;:&quot;Instagram&quot;,&quot;linkAddNoFollowImageLink&quot;:&quot;false&quot;,&quot;src&quot;:&quot;/content/dam/journey/in/en/private/logos/instagram_circle.svg&quot;,&quot;linkUrl&quot;:&quot;https://www.instagram.com/cocacola_india&quot;,&quot;linkAddNoFollow&quot;:&quot;false&quot;}}],&quot;linkItems&quot;:[{&quot;linkUrl&quot;:&quot;/contact-us&quot;,&quot;linkTarget&quot;:&quot;_self&quot;,&quot;data&quot;:{&quot;linkName&quot;:&quot;Contact Us&quot;,&quot;linkAddNoFollow&quot;:&quot;false&quot;}},{&quot;linkUrl&quot;:&quot;/policies-practices&quot;,&quot;linkTarget&quot;:&quot;_self&quot;,&quot;data&quot;:{&quot;linkName&quot;:&quot;Policies&quot;,&quot;linkAddNoFollow&quot;:&quot;false&quot;}},{&quot;linkUrl&quot;:&quot;/careers&quot;,&quot;linkTarget&quot;:&quot;_self&quot;,&quot;data&quot;:{&quot;linkName&quot;:&quot;Careers&quot;,&quot;linkAddNoFollow&quot;:&quot;false&quot;}},{&quot;linkUrl&quot;:&quot;/faqs&quot;,&quot;linkTarget&quot;:&quot;_self&quot;,&quot;data&quot;:{&quot;linkName&quot;:&quot;FAQs&quot;,&quot;linkAddNoFollow&quot;:&quot;false&quot;}}]}" id="JourneyFooter" data-component-id="JourneyFooter" data-component-name="footer" data-design-package="links_before_header" data-allow-nesting="false" data-instance-id="b3898b0f-5d8b-7458-37e5-9bc8f19c12b3"><footer role="contentinfo">
+  <div class="footer__logo">
+    <div class="footer__logo-img footer__logo-main">
+      <a href="https://www.coca-colaindia.com/homepage" role="img" aria-label="TCC India Footer"><img class="lazyload" data-src="/content/dam/journey/in/en/private/logos/india_footerLogo.png" alt="TCC India Footer"></a>
+    </div>
+
+
+
+    <ul class="footerLinkList" role="list">
+      <li class="footer-link" id="footerLink_Contact Us_0" style="  " role="listitem"><a href="https://www.coca-colaindia.com/contact-us" aria-label="Contact Us">Contact Us</a></li>
+      <li class="footer-link" id="footerLink_Policies_1" style="  " role="listitem"><a href="https://www.coca-colaindia.com/policies-practices" aria-label="Policies">Policies</a></li>
+      <li class="footer-link" id="footerLink_Careers_2" style="  " role="listitem"><a href="https://www.coca-colaindia.com/careers" aria-label="Careers">Careers</a></li>
+      <li class="footer-link" id="footerLink_FAQs_3" style="  " role="listitem"><a href="https://www.coca-colaindia.com/faqs" aria-label="FAQs">FAQs</a></li>
+    </ul>
+  </div>
+  <div class="footer__text">
+    <div class="footer__content">
+      <div class="footer__row text-center">
+        <!-- ADDING SOCIAL MEDIA -->
+        <ul class="socialMediaList" role="list">
+          <li id="footerLink_Facebook_0" style="
+            
+            " role="listitem" aria-label="Facebook">
+            <a href="https://www.facebook.com/cocacolaindia" role="img" aria-label="Facebook">
+              <img data-src="/content/dam/journey/in/en/private/logos/facebook_circle.svg" alt="Facebook" class="footer__sharebar-icon lazyload" data-sizes="auto">
+              <span></span>
+            </a>
+          </li>
+          <li id="footerLink_Twitter_1" style="
+            
+            " role="listitem" aria-label="Twitter">
+            <a href="https://twitter.com/CocaCola" role="img" aria-label="Twitter">
+              <img data-src="/content/dam/journey/in/en/private/logos/twitter_circle.svg" alt="Twitter" class="footer__sharebar-icon lazyload" data-sizes="auto">
+              <span></span>
+            </a>
+          </li>
+          <li id="footerLink_Youtube_2" style="
+            
+            " role="listitem" aria-label="Youtube">
+            <a href="https://www.youtube.com/user/cocacola" role="img" aria-label="Youtube">
+              <img data-src="/content/dam/journey/in/en/private/logos/youtube_circle.svg" alt="Youtube" class="footer__sharebar-icon lazyload" data-sizes="auto">
+              <span></span>
+            </a>
+          </li>
+          <li id="footerLink_Flikr_3" style="
+            
+            " role="listitem" aria-label="Flikr">
+            <a href="https://www.flickr.com/photos/coca-cola/" role="img" aria-label="Flikr">
+              <img data-src="/content/dam/journey/in/en/private/logos/flickr_circle.svg" alt="Flikr" class="footer__sharebar-icon lazyload" data-sizes="auto">
+              <span></span>
+            </a>
+          </li>
+          <li id="footerLink_Instagram_4" style="
+            
+            " role="listitem" aria-label="Instagram">
+            <a href="https://www.instagram.com/cocacola_india" role="img" aria-label="Instagram">
+              <img data-src="/content/dam/journey/in/en/private/logos/instagram_circle.svg" alt="Instagram" class="footer__sharebar-icon lazyload" data-sizes="auto">
+              <span></span>
+            </a>
+          </li>
+        </ul>
+        <!-- ADDING SOCIAL MEDIA -->
+      </div>
+      <div class="footer__row footer__description text-center" style="  ">
+          <p><b>Copyright 2019 The Coca-Cola Company. All Rights Reserved.</b> </p>
+<p>The Coca-Cola system in India is comprised of Coca-Cola India Pvt. Ltd. (CCIPL), the concentrate manufacturing entity and 15 authorised bottlers of The Coca-Cola Company (TCCC), which are responsible for the production of ready-to-drink, non-alcoholic beverages under the Trademarks of TCCC, their distribution and sale in the territory of India. The system also comprises the India branch office of Coca-Cola India Inc., which provides guidance in relation to development of business in India.</p>
+
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+</div>
+</div></div>
+
+    
+</div>
+</div>
+
+    
+</div>
+</div>
+
+        
+    
+    
+    <!-- <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+	    <sly data-sly-call=""/>
+	</sly> -->
+    
+    <script type="text/javascript" src="./Homepage_files/clientlib-base.js.download"></script>
+	
+	<!-- Load Requirejs and init app -->
+	<script data-main="https://shared.coke.com/etc.clientlibs/nextgen/clientlibs/ng-base/app" src="./Homepage_files/require.js.download"></script>
+
+	
+	<script src="./Homepage_files/journey.js.download"></script>
+
+
+    
+
+    
+
+
+        
+
+    
+
+    <script type="text/javascript">var searchConfig = {"global":"/search"};</script>
+    
+    
+    
+    
+
+
+<div class="responsive-bootstrap-toolkit"><div class="device-xs visible-xs visible-xs-block"></div><div class="device-sm visible-sm visible-sm-block"></div><div class="device-md visible-md visible-md-block"></div><div class="device-lg visible-lg visible-lg-block"></div><div class="d-xs-block d-sm-none d-md-none d-lg-none d-xl-none"></div><div class="d-none d-sm-block d-md-none d-lg-none d-xl-none"></div><div class="d-none d-md-block d-sm-none d-lg-none d-xl-none"></div><div class="d-none d-lg-block d-sm-none d-md-none d-xl-none"></div><div class="d-none d-xl-block d-sm-none d-md-none d-lg-none"></div><div class="d-xs-block d-sm-none d-md-none d-lg-none d-xl-none"></div><div class="d-none d-sm-block d-md-none d-lg-none d-xl-none"></div><div class="d-none d-md-block d-sm-none d-lg-none d-xl-none"></div><div class="d-none d-lg-block d-sm-none d-md-none d-xl-none"></div><div class="d-none d-xl-block d-sm-none d-md-none d-lg-none"></div></div><iframe scrolling="no" frameborder="0" allowtransparency="true" src="./Homepage_files/widget_iframe.7dae38096d06923d683a2a807172322a.html" title="Twitter settings iframe" style="display: none;"></iframe><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" title="Twitter analytics iframe" src="./Homepage_files/saved_resource.html"></iframe></body></html>

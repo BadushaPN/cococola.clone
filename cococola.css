@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "TCCC-UnityText-Regular", "TCCC-UnityText", sans-serif;
+}
+
+.main {
+    width: 100;
+    display: flex;
+    position: sticky;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.377);
+
+}
+
+.main .sub-main {
+    width: 100%;
+    position: absolute;
+    padding-left: 43%;
+    padding-top: 20px;
+}
+
+.main .sub-main img {
+    width: 25%;
+}
+
+.main .para {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    padding-left: 22%;
+    padding-top: 90px;
+
+}
+
+.main .para p {
+    /* width : 20%; */
+    font-size: 22px;
+    font-size: 1rem;
+    white-space: nowrap;
+    line-height: 2rem;
+
+}
+
+.main .para .a {
+    margin-left: 40px;
+}
+
+.main .para .b {
+    margin-left: 40px;
+}
+
+.main .para .c {
+    margin-left: 40px;
+}
+
+.main2 {
+    width: 100%;
+    height: 522px;
+    background-image: url(../cococola/adding\ happiness\ homepage\ desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    border-bottom: 0.5pxsolid #000;
+    background-position: center;
+}
+
+.main2 .para2 {
+    position: absolute;
+    left: 10%;
+    color: #fff;
+    text-shadow: 3px 3px 10px rgba(20, 9, 9, 0.801);
+}
+
+.main2 .para2 h1 {
+    margin-bottom: 10px;
+    font-size: 40px;
+
+
+}
+
+.main2 .para2 p {
+    line-height: 30px;
+    font-size: 25px;
+}
+
+.main3 {
+    width: 100;
+    height: 522px;
+    background-image: url(../cococola/homepage\ sustainability\ 2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    background-position: center;
+}
+
+.main3 .para3 {
+    position: absolute;
+    left: 10%;
+    color: #fff;
+    text-shadow: 3px 3px 10px rgba(20, 9, 9, 0.801);
+}
+
+.main3 .para3 h1 {
+    margin-bottom: 10px;
+    font-size: 40px;
+
+
+}
+
+.main3 .para3 p {
+    line-height: 30px;
+    font-size: 25px;
+}
+
+.main4 {
+    width: 100%;
+    background-image: url(../cococola/Water\ Stewardship\ -\ Desktop.jpg);
+    height: 522px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    background-position: center;
+}
+
+.main4 .para4 {
+    position: absolute;
+    left: 10%;
+    color: #fff;
+    text-shadow: 3px 3px 10px rgba(20, 9, 9, 0.801);
+}
+
+.main4 .para4 h1 {
+    margin-bottom: 10px;
+    font-size: 40px;
+
+
+}
+
+.main4 .para4 p {
+    line-height: 30px;
+    font-size: 25px;
+}
+
+.main5 {
+    width: 100%;
+    background-image: url(../cococola/world\ without\ waste\ .jpg);
+    height: 522px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    background-position: center;
+}
+
+.main5 .para5 {
+    position: absolute;
+    left: 10%;
+    color: #fff;
+    text-shadow: 3px 3px 10px rgba(20, 9, 9, 0.801);
+    margin-top: 60px;
+
+}
+
+.main5 .para5 h1 {
+    margin-bottom: 10px;
+    font-size: 40px;
+
+
+}
+
+.main5 .para5 p {
+    line-height: 30px;
+    font-size: 25px;
+}
+
+.main6 {
+    width: 100%;
+    background-image: url(../cococola/1f1e4806-6a73-40ba-9234-ea63a40b1224.jpg);
+    height: 522px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    background-position: center;
+}
+
+.main6 .para6 {
+    position: absolute;
+    right: 10%;
+    color: #fff;
+    text-shadow: 3px 3px 10px rgba(20, 9, 9, 0.801);
+    margin-top: 60px;
+
+}
+
+.main6 .para6 h1 {
+    margin-bottom: 10px;
+    font-size: 40px;
+
+
+}
+
+.main6 .para6 p {
+    line-height: 30px;
+    font-size: 25px;
+}
+
+.main7 {
+    width: 100%;
+    background-image: url(../cococola/journey-desktop-banner-4-1440x650.jpg);
+    height: 554px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    background-position: center;
+}
+
+.main7 .para7 {
+    position: absolute;
+    left: 10%;
+    color: #fff;
+    text-shadow: 3px 3px 5px rgba(20, 9, 9, 0.801);
+    margin-top: 80px;
+}
+
+.main7 .para7 h1 {
+    margin-bottom: 10px;
+    font-size: 40px;
+
+
+}
+
+.main7 .para7 p {
+    line-height: 30px;
+    font-size: 25px;
+}
+
+.main8 {
+    width: 100%;
+    height: 250px;
+    background-color: #4A4A4A;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+}
+
+.main8 .center .para8 img {
+    width: 180px;
+}
+
+.main8 .center {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3%;
+    margin-left: 2%;
+}
+
+.main8 .center .i {
+    margin-left: 85%;
+
+}
